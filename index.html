@@ -1,268 +1,341 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Philosophy of Life | Fluir · Takuan · Tao</title>
-  <!-- Fuentes serias, orgánicas y humanistas -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500&display=swap" rel="stylesheet">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Philosophy of Life · Takuan Sōhō · El Legado de la Mente sin Amarras</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500&family=Noto+Serif+JP:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    body {
-      background: #f5f2eb;
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      font-weight: 300;
-      color: #1e1e1e;
-      line-height: 1.7;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-      padding: 2.5rem 1.5rem;
-      background-image: radial-gradient(circle at 20% 30%, rgba(180, 160, 130, 0.08) 0%, transparent 40%),
-                        radial-gradient(circle at 80% 70%, rgba(140, 120, 90, 0.06) 0%, transparent 45%);
-    }
+        body {
+            background: #f9f7f2;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-weight: 300;
+            color: #1e1e1e;
+            line-height: 1.7;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            padding: 2rem 1.5rem;
+            background-image: radial-gradient(ellipse at 15% 20%, rgba(160, 140, 110, 0.06) 0%, transparent 55%),
+            radial-gradient(ellipse at 85% 75%, rgba(140, 120, 90, 0.04) 0%, transparent 55%);
+        }
 
-    /* Contenedor principal que evoca un manuscrito, un templo, una mente expandida */
-    .letter-container {
-      max-width: 880px;
-      width: 100%;
-      background: rgba(252, 250, 245, 0.85);
-      backdrop-filter: blur(18px);
-      -webkit-backdrop-filter: blur(18px);
-      background: #fdfaf4;
-      border-radius: 2.5rem;
-      padding: 4rem 3.5rem;
-      box-shadow: 0 30px 60px rgba(0,0,0,0.06), 0 10px 30px rgba(0,0,0,0.04), inset 0 1px 0 rgba(255,255,255,0.9);
-      border: 1px solid rgba(180, 150, 110, 0.2);
-      position: relative;
-      transition: all 0.3s ease;
-    }
+        .main-container {
+            max-width: 1000px;
+            width: 100%;
+            background: rgba(253, 251, 246, 0.9);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: 2.8rem;
+            padding: 3.5rem 3.8rem;
+            box-shadow: 0 35px 70px rgba(0,0,0,0.05), 0 12px 30px rgba(0,0,0,0.03), inset 0 1px 0 rgba(255,255,255,0.95);
+            border: 1px solid rgba(170, 145, 110, 0.18);
+            position: relative;
+        }
 
-    /* Sutiles líneas decorativas que recuerdan la caligrafía y el fluir del agua */
-    .letter-container::before {
-      content: "";
-      position: absolute;
-      top: 2.5rem;
-      left: 3.5rem;
-      width: 80px;
-      height: 2px;
-      background: #cbb295;
-      opacity: 0.5;
-    }
+        .main-container::before {
+            content: "";
+            position: absolute;
+            top: 2.8rem;
+            left: 3.8rem;
+            width: 70px;
+            height: 2px;
+            background: #b8a68b;
+            opacity: 0.55;
+        }
 
-    .letter-container::after {
-      content: "";
-      position: absolute;
-      bottom: 2.5rem;
-      right: 3.5rem;
-      width: 100px;
-      height: 2px;
-      background: #cbb295;
-      opacity: 0.4;
-    }
+        .main-container::after {
+            content: "";
+            position: absolute;
+            bottom: 2.8rem;
+            right: 3.8rem;
+            width: 90px;
+            height: 2px;
+            background: #b8a68b;
+            opacity: 0.45;
+        }
 
-    .site-masthead {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      margin-bottom: 3.5rem;
-      border-bottom: 1px solid #e0d7cc;
-      padding-bottom: 2.2rem;
-    }
+        /* ----- MASTHEAD ----- */
+        .masthead {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-bottom: 3.2rem;
+            border-bottom: 1px solid #dfd6ca;
+            padding-bottom: 2rem;
+        }
 
-    .site-title {
-      font-family: 'Cormorant Garamond', 'Times New Roman', serif;
-      font-size: 2.8rem;
-      font-weight: 500;
-      letter-spacing: 0.5px;
-      color: #2b2a27;
-      margin-bottom: 0.3rem;
-      text-transform: none;
-      font-style: normal;
-      line-height: 1.1;
-    }
+        .site-title {
+            font-family: 'Cormorant Garamond', 'Times New Roman', serif;
+            font-size: 3rem;
+            font-weight: 500;
+            letter-spacing: 0.4px;
+            color: #2b2722;
+            line-height: 1.1;
+            margin-bottom: 0.2rem;
+        }
 
-    .site-subtitle {
-      font-family: 'Inter', sans-serif;
-      font-weight: 300;
-      font-size: 0.95rem;
-      text-transform: uppercase;
-      letter-spacing: 0.35em;
-      color: #7b6e5d;
-      margin-top: 0.25rem;
-      word-spacing: 2px;
-    }
+        .site-subtitle {
+            font-family: 'Inter', sans-serif;
+            font-weight: 300;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.38em;
+            color: #7a6c5a;
+            word-spacing: 3px;
+        }
 
-    .philosophy-letter {
-      font-family: 'Cormorant Garamond', 'Times New Roman', serif;
-      font-weight: 400;
-      font-size: 1.7rem;
-      line-height: 1.65;
-      color: #282623;
-      margin: 2rem 0 2.8rem;
-      letter-spacing: 0.2px;
-      quotes: "“" "”" "‘" "’";
-    }
+        .master-name-jp {
+            font-family: 'Noto Serif JP', 'Cormorant Garamond', serif;
+            font-size: 1.6rem;
+            color: #9b8a72;
+            margin-top: 0.4rem;
+            font-weight: 400;
+        }
 
-    .philosophy-letter p {
-      margin-bottom: 2rem;
-      text-align: justify;
-      hyphens: auto;
-      font-style: normal;
-    }
+        /* ----- SECCIONES DE ENSEÑANZA ----- */
+        .section-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            font-weight: 500;
+            color: #3b362f;
+            margin: 3rem 0 1.4rem;
+            border-left: 4px solid #b8a68b;
+            padding-left: 1.4rem;
+        }
 
-    .philosophy-letter .dropcap {
-      font-size: 4.2rem;
-      float: left;
-      font-weight: 500;
-      line-height: 0.8;
-      margin-right: 0.7rem;
-      margin-top: 0.3rem;
-      color: #9b8a74;
-      font-family: 'Cormorant Garamond', serif;
-    }
+        .teaching-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2.2rem;
+            margin: 2rem 0 1rem;
+        }
 
-    .highlight-flow {
-      font-style: italic;
-      color: #4a4238;
-      background: linear-gradient(to right, transparent 0%, rgba(210, 190, 160, 0.2) 30%, rgba(210, 190, 160, 0.2) 70%, transparent 100%);
-      padding: 0 0.2rem;
-      font-weight: 500;
-    }
+        .teaching-card {
+            background: rgba(250, 247, 240, 0.7);
+            border-radius: 1.8rem;
+            padding: 1.8rem 1.6rem;
+            border: 1px solid rgba(180, 155, 120, 0.2);
+            transition: all 0.25s ease;
+            backdrop-filter: blur(5px);
+        }
 
-    .signature-line {
-      margin-top: 3rem;
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 2rem;
-      text-align: right;
-      color: #6b5d4b;
-      font-style: italic;
-      opacity: 0.8;
-      border-top: 1px dashed #d6cbbc;
-      padding-top: 2rem;
-    }
+        .teaching-card:hover {
+            border-color: rgba(160, 130, 90, 0.45);
+            background: rgba(255, 252, 245, 0.85);
+            box-shadow: 0 12px 28px rgba(0,0,0,0.04);
+        }
 
-    .principles-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2rem;
-      margin: 3rem 0 1.8rem;
-      justify-content: center;
-      font-family: 'Inter', sans-serif;
-      font-weight: 300;
-    }
+        .card-icon {
+            font-size: 2.2rem;
+            margin-bottom: 0.6rem;
+            color: #8b7a64;
+        }
 
-    .principle-item {
-      flex: 1 1 180px;
-      background: transparent;
-      border-left: 1px solid #cfbfa8;
-      padding-left: 1.4rem;
-      color: #3e3a33;
-    }
+        .card-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #3a3229;
+            margin-bottom: 0.7rem;
+        }
 
-    .principle-item h4 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.4rem;
-      font-weight: 500;
-      margin-bottom: 0.4rem;
-      color: #4e4438;
-      letter-spacing: 0.3px;
-    }
+        .card-text {
+            font-size: 0.92rem;
+            line-height: 1.7;
+            color: #4b4238;
+            font-weight: 300;
+        }
 
-    .principle-item p {
-      font-size: 0.9rem;
-      line-height: 1.6;
-      color: #5d5549;
-      font-weight: 300;
-    }
+        .quote-block {
+            margin: 3rem 0;
+            padding: 2rem 2.5rem;
+            background: rgba(235, 225, 210, 0.3);
+            border-radius: 2rem;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.7rem;
+            font-style: italic;
+            color: #3e362d;
+            text-align: center;
+            border: 1px solid rgba(160, 135, 100, 0.25);
+            position: relative;
+        }
 
-    .reference-takuan {
-      font-family: 'Inter', sans-serif;
-      font-weight: 300;
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.2em;
-      color: #aa9b87;
-      margin-top: 2.2rem;
-      text-align: center;
-      border-top: 1px solid #e5dcd0;
-      padding-top: 2.2rem;
-    }
+        .quote-author {
+            display: block;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            font-family: 'Inter', sans-serif;
+            font-style: normal;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: #8b7a63;
+        }
 
-    .reference-takuan span {
-      font-weight: 500;
-      color: #5f5343;
-    }
+        .works-list {
+            list-style: none;
+            padding: 0;
+            margin: 2rem 0;
+        }
 
-    @media (max-width: 650px) {
-      .letter-container {
-        padding: 2.5rem 1.8rem;
-        border-radius: 2rem;
-      }
-      .philosophy-letter {
-        font-size: 1.4rem;
-      }
-      .site-title {
-        font-size: 2.2rem;
-      }
-    }
-  </style>
+        .works-list li {
+            padding: 1rem 0;
+            border-bottom: 1px dashed #d6cbbc;
+            font-size: 1.05rem;
+            display: flex;
+            align-items: baseline;
+            gap: 0.7rem;
+        }
+
+        .works-list li span {
+            font-weight: 500;
+            color: #5f503c;
+            min-width: 180px;
+        }
+
+        .footer-note {
+            margin-top: 3.5rem;
+            text-align: center;
+            font-family: 'Inter', sans-serif;
+            font-weight: 300;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.28em;
+            color: #aa9b87;
+            border-top: 1px solid #e5dcd0;
+            padding-top: 2.2rem;
+        }
+
+        @media (max-width: 650px) {
+            .main-container {
+                padding: 2.2rem 1.5rem;
+                border-radius: 2rem;
+            }
+            .site-title {
+                font-size: 2.3rem;
+            }
+            .quote-block {
+                font-size: 1.3rem;
+                padding: 1.5rem;
+            }
+        }
+    </style>
 </head>
 <body>
-  <div class="letter-container">
-    <div class="site-masthead">
-      <h1 class="site-title">Philosophy of Life</h1>
-      <div class="site-subtitle">Fluir · Cognición · Rendimiento de elite</div>
+<div class="main-container">
+
+    <!-- Cabecera -->
+    <div class="masthead">
+        <h1 class="site-title">Philosophy of Life</h1>
+        <div class="site-subtitle">El legado de la mente sin amarras</div>
+        <div class="master-name-jp">沢庵 宗彭 · Takuan Sōhō</div>
     </div>
 
-    <!-- La carta filosófica, enorme, profunda, fundamentada en Takuan y Tao -->
-    <div class="philosophy-letter">
-      <p>
-        <span class="dropcap">H</span>ay una conciencia que se encapsula en conceptos abstractos y delimita nuestra realidad. No somos afines con la naturaleza cuando nos encerramos en el lenguaje y la clasificación. <span class="highlight-flow">Takuan Sōhō</span> propuso que debíamos eliminar esa fijación, ser simplemente un fluir del agua. La mente está en todas partes. Una mente que no se fija en nada es libre.
-      </p>
-      <p>
-        Ser. Simplemente ser. Este momento, cuando no le impones conciencia, y los sucesos se encadenan en realización consecutiva por sí solos. Tú fluyes, no te detienes por nada; todo te atraviesa, pero nada te define. La mente ya no está encapsulada en delimitaciones, y así libera su potencial entero, experimentando sin darle valor fijo a nada.
-      </p>
-      <p>
-        Esto es una explosión hacia el infinito: movimiento puro. Cuando nos soltamos, algo nos guía a devorar la masa entera de la vida. Experimentar es crear, leer, ser atravesados por sensaciones sin atarnos a ellas. Fluir no requiere resistencia; es la naturaleza de la vida que ya ocurre, y que nosotros impedimos con nuestra conciencia rígida.
-      </p>
-      <p>
-        Todo se reduce a algo más pequeño y plano: el mero concepto de <span class="highlight-flow">fluir</span>. Esto, simplemente, ya es. Así que ríndanse a eso.
-      </p>
-      <div class="signature-line">
-        — el fluir no pide permiso —
-      </div>
+    <!-- Introducción al maestro -->
+    <p style="font-size: 1.1rem; line-height: 1.8; color: #3b352c; margin-bottom: 0.5rem;">
+        Monje Zen, calígrafo, poeta, estratega. Asesor de shogunes y maestros de espada.
+        Takuan Sōhō (1573–1645) no escribió una filosofía: forjó un <strong>sistema completo para la mente humana</strong>.
+        Fusionó la iluminación espiritual con la acción más exigente: el combate, la vida, la decisión.
+        Esto es lo que nos dejó.
+    </p>
+
+    <!-- Principios clave expandidos -->
+    <div class="section-title">🌊 Los pilares del sistema</div>
+
+    <div class="teaching-grid">
+        <div class="teaching-card">
+            <div class="card-icon">🧊→💧</div>
+            <div class="card-title">Mente Inamovible</div>
+            <div class="card-text">
+                <em>Fudōchi Shinmyōroku.</em> La mente no debe detenerse en un solo punto. Si se fija, es hielo. Si fluye, es agua.
+                Ante un ataque (o un problema), no te paralices analizando. Actúa desde la fluidez.
+            </div>
+        </div>
+        <div class="teaching-card">
+            <div class="card-icon">🎯</div>
+            <div class="card-title">Mushin · No-mente</div>
+            <div class="card-text">
+                La "mente sin mente". No es ausencia de pensamiento, es <strong>ausencia de fijación</strong>.
+                Piensa, decide, actúa, pero sin que la mente se quede pegada a nada. Libre, disponible, completa.
+            </div>
+        </div>
+        <div class="teaching-card">
+            <div class="card-icon">⚔️</div>
+            <div class="card-title">El sable y el espíritu</div>
+            <div class="card-text">
+                Enseñó a Yagyū Munenori que la técnica sin conciencia es ciega, y la conciencia sin técnica es inútil.
+                La maestría surge cuando la acción ocurre sin mediación del ego.
+            </div>
+        </div>
+        <div class="teaching-card">
+            <div class="card-icon">🌳🍃</div>
+            <div class="card-title">El árbol y la hoja</div>
+            <div class="card-text">
+                Si te fijas en una sola hoja, pierdes el árbol. Si tu mente se obsesiona con un detalle,
+                te vuelves vulnerable a todo lo demás. La mente maestra abarca la totalidad.
+            </div>
+        </div>
     </div>
 
-    <!-- Principios que destilan psicología, cognición y rendimiento de elite desde el no-hacer -->
-    <div class="principles-row">
-      <div class="principle-item">
-        <h4>Mushin · No-mente</h4>
-        <p>La conciencia no fijada permite respuesta instantánea. En el rendimiento de elite, la mente fluye sin obstrucción.</p>
-      </div>
-      <div class="principle-item">
-        <h4>Wu Wei · Acción sin esfuerzo</h4>
-        <p>El Tao enseña que la naturaleza no se apresura, y sin embargo todo se realiza. Fluir es alinearse con ese orden.</p>
-      </div>
-      <div class="principle-item">
-        <h4>Potencial infinito</h4>
-        <p>Cuando la mente está en todas partes, deja de estar encapsulada. La cognición se expande más allá de los límites autoimpuestos.</p>
-      </div>
+    <!-- Cita maestra -->
+    <div class="quote-block">
+        "Cuando la mente no se detiene en nada, está en todas partes. Una mente que no se fija es libre."
+        <span class="quote-author">— Takuan Sōhō, La Mente sin Amarras</span>
     </div>
 
-    <div class="reference-takuan">
-      <span>Takuan Sōhō (沢庵 宗彭)</span> · El maestro zen que escribió «El espíritu inquebrantable» · 
-      Tao Te Ching · Naturaleza humana sin delimitación
+    <!-- Obras principales -->
+    <div class="section-title">📜 Obras fundamentales</div>
+    <ul class="works-list">
+        <li><span>La Mente sin Amarras</span> (The Unfettered Mind) — Correspondencia con Yagyū Munenori. La esencia del Zen aplicado a la acción.</li>
+        <li><span>Fudōchi Shinmyōroku</span> — El tratado de la Mente Inamovible. Cómo recibir un ataque y devolverlo sin que la mente se estanque.</li>
+        <li><span>Estrategia Zen</span> — Cartas a maestros de espada. Incorporación definitiva del Zen en las artes marciales japonesas.</li>
+        <li><span>Comentarios al Tao Te Ching</span> — Aplicación del Tao a la salud, las relaciones, el gobierno y la vida cotidiana.</li>
+    </ul>
+
+    <!-- Principios adicionales -->
+    <div class="section-title">🌱 Principios para la vida diaria</div>
+    <div class="teaching-grid">
+        <div class="teaching-card">
+            <div class="card-icon">🌀</div>
+            <div class="card-title">No buscar placer por sí mismo</div>
+            <div class="card-text">La sabiduría no persigue el placer ni huye del dolor. Acepta las cosas como son, sin preferencias egoicas.</div>
+        </div>
+        <div class="teaching-card">
+            <div class="card-icon">🔓</div>
+            <div class="card-title">El miedo aísla</div>
+            <div class="card-text">Aislarse por miedo rompe la conexión con los demás y contigo mismo. La mente valiente permanece abierta.</div>
+        </div>
+        <div class="teaching-card">
+            <div class="card-icon">💧</div>
+            <div class="card-title">Usa la energía del contrario</div>
+            <div class="card-text">No resistas el ataque. Absórbelo, fluye con él, y devuélvelo. En la vida, los obstáculos se convierten en impulso.</div>
+        </div>
+        <div class="teaching-card">
+            <div class="card-icon">⏳</div>
+            <div class="card-title">El momento justo</div>
+            <div class="card-text">No hay que apresurarse ni retrasarse. La mente que fluye actúa en el instante exacto, sin vacilación.</div>
+        </div>
     </div>
-  </div>
+
+    <!-- Cierre -->
+    <div class="quote-block" style="font-size: 1.4rem;">
+        "La mente debe ser como el agua: sin forma, sin resistencia, capaz de adaptarse a cualquier recipiente y de penetrar cualquier grieta."
+        <span class="quote-author">— Takuan Sōhō</span>
+    </div>
+
+    <div class="footer-note">
+        Philosophy of Life · Dedicado al monje que enseñó a los guerreros a soltar la espada y la mente ·
+        沢庵 宗彭 · 1573–1645
+    </div>
+</div>
 </body>
 </html>
