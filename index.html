@@ -1,294 +1,293 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <title>World Anti-Philosophy · el movimiento del no-concepto</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Filosofía de la Experimentación</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    body {
-      background: #0b0b0b;
-      color: #d9c9a3;
-      font-family: 'Georgia', 'Times New Roman', serif;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-      padding: 2rem 1.5rem;
-      line-height: 1.7;
-      position: relative;
-      overflow-x: hidden;
-    }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f5f3f0;
+            color: #1e1e2a;
+            line-height: 1.6;
+            padding: 2rem 1.5rem;
+        }
 
-    canvas#particles {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 0;
-      pointer-events: none;
-    }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 3rem 2.5rem;
+            border-radius: 24px;
+            box-shadow: 0 20px 40px -12px rgba(0,0,0,0.15);
+        }
 
-    .container {
-      max-width: 760px;
-      width: 100%;
-      background: rgba(8, 8, 8, 0.82);
-      backdrop-filter: blur(14px);
-      border: 1px solid #3a3324;
-      border-radius: 2.5rem;
-      padding: 2.8rem 2.2rem;
-      box-shadow: 0 0 45px rgba(0,0,0,0.9);
-      position: relative;
-      z-index: 2;
-    }
+        /* Título principal */
+        .title {
+            font-size: 3.2rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #111, #4a4a5a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
 
-    h1 {
-      font-size: 2.8rem;
-      letter-spacing: 4px;
-      font-weight: 400;
-      text-transform: uppercase;
-      color: #e7d7a8;
-      border-bottom: 1px solid #4e3f2b;
-      padding-bottom: 0.6rem;
-      margin-bottom: 1.2rem;
-      word-spacing: 6px;
-    }
+        .subtitle {
+            font-size: 1.1rem;
+            font-weight: 400;
+            color: #555;
+            border-left: 4px solid #d4a373;
+            padding-left: 1.2rem;
+            margin-bottom: 2.5rem;
+        }
 
-    .movimiento {
-      font-size: 1.1rem;
-      color: #8b7a5c;
-      margin-bottom: 2.5rem;
-      font-style: italic;
-      border-left: 3px solid #4e3f2b;
-      padding-left: 1.2rem;
-    }
+        /* Manifiesto */
+        .manifesto {
+            font-size: 1.1rem;
+            background: #faf8f6;
+            padding: 2rem 2rem;
+            border-radius: 16px;
+            margin: 2rem 0;
+            border: 1px solid #eae6e0;
+        }
 
-    .declaracion {
-      background: #14110c;
-      border: 1px solid #2f281c;
-      border-radius: 2rem;
-      padding: 2rem 1.8rem;
-      margin-bottom: 2.5rem;
-      color: #c7ae6a;
-      font-size: 1.1rem;
-    }
+        .manifesto p {
+            margin-bottom: 1rem;
+        }
 
-    .declaracion h2 {
-      font-size: 1.6rem;
-      font-weight: 400;
-      color: #dbbf6e;
-      margin-bottom: 1.2rem;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-    }
+        .manifesto strong {
+            color: #1e1e2a;
+            font-weight: 600;
+        }
 
-    .declaracion p {
-      color: #bcb09b;
-      margin-bottom: 1rem;
-    }
+        .highlight {
+            background: #e9e3dc;
+            padding: 0.1rem 0.4rem;
+            border-radius: 6px;
+            font-weight: 500;
+        }
 
-    .principio {
-      margin-bottom: 2.2rem;
-      opacity: 0.9;
-    }
+        /* Principios */
+        .principles {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+            margin: 2.5rem 0;
+        }
 
-    .principio h2 {
-      font-size: 1.4rem;
-      font-weight: 400;
-      color: #8b7a5c;
-      margin-bottom: 0.3rem;
-      display: flex;
-      align-items: baseline;
-      gap: 0.5rem;
-      flex-wrap: wrap;
-    }
+        .principle-card {
+            background: #fcfaf8;
+            border: 1px solid #e8e2dc;
+            border-radius: 16px;
+            padding: 1.5rem 2rem;
+            transition: all 0.2s ease;
+        }
 
-    .numero {
-      color: #5a4a32;
-      font-size: 1.1rem;
-      font-style: italic;
-    }
+        .principle-card:hover {
+            border-color: #b8a99a;
+            background: #faf7f4;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px -8px rgba(0,0,0,0.08);
+        }
 
-    .principio p {
-      color: #9e917b;
-      font-size: 1rem;
-      margin-left: 0.3rem;
-    }
+        .principle-card h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.2rem;
+            color: #1e1e2a;
+        }
 
-    .bloque-cita {
-      margin: 2.5rem 0 2rem;
-      padding: 1.3rem 1.8rem;
-      background: #14110c;
-      border-radius: 1.5rem;
-      font-style: italic;
-      color: #aa9b7c;
-      border: 1px solid #2f281c;
-    }
+        .principle-card .sub {
+            font-size: 0.85rem;
+            font-weight: 400;
+            color: #7a6e62;
+            letter-spacing: 0.02em;
+            margin-bottom: 0.5rem;
+        }
 
-    .bloque-cita span {
-      display: block;
-      margin-top: 0.8rem;
-      font-size: 0.9rem;
-      color: #6b5d45;
-      letter-spacing: 1px;
-    }
+        .principle-card p {
+            color: #3a3a48;
+            font-size: 1rem;
+        }
 
-    .final {
-      margin-top: 2.5rem;
-      text-align: right;
-      font-size: 1.15rem;
-      color: #7f6e51;
-      border-top: 1px dashed #2f281c;
-      padding-top: 1.8rem;
-    }
+        .principle-card .tag {
+            display: inline-block;
+            background: #d4c5b8;
+            color: #1e1e2a;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            padding: 0.15rem 0.7rem;
+            border-radius: 20px;
+            margin-right: 0.5rem;
+        }
 
-    .firma {
-      font-family: 'Courier New', monospace;
-      color: #5a4a32;
-      margin-top: 0.6rem;
-      font-size: 0.95rem;
-    }
+        /* Cita */
+        .quote {
+            font-size: 1.2rem;
+            font-style: italic;
+            color: #3d3d4a;
+            border-top: 2px solid #d4c5b8;
+            border-bottom: 2px solid #d4c5b8;
+            padding: 1.5rem 0;
+            margin: 2.5rem 0;
+            text-align: center;
+        }
 
-    @media (max-width: 500px) {
-      .container {
-        padding: 2rem 1.2rem;
-      }
-      h1 {
-        font-size: 2rem;
-      }
-    }
-  </style>
+        .quote span {
+            display: block;
+            font-style: normal;
+            font-size: 0.9rem;
+            color: #7a6e62;
+            margin-top: 0.3rem;
+        }
+
+        /* Sección "singular" */
+        .singular {
+            background: #f2eee9;
+            border-radius: 16px;
+            padding: 2rem 2rem;
+            margin: 2rem 0;
+            border-left: 6px solid #b8a99a;
+        }
+
+        .singular h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Footer */
+        .footer {
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #e0dad4;
+            color: #7a6e62;
+            font-size: 0.9rem;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .footer a {
+            color: #3d3d4a;
+            text-decoration: none;
+            border-bottom: 1px dotted #ccc;
+        }
+
+        .footer a:hover {
+            border-bottom-color: #3d3d4a;
+        }
+
+        @media (max-width: 600px) {
+            body { padding: 1rem; }
+            .container { padding: 1.8rem 1.2rem; }
+            .title { font-size: 2.2rem; }
+            .principle-card { padding: 1.2rem 1.2rem; }
+        }
+    </style>
 </head>
 <body>
-  <canvas id="particles"></canvas>
+<div class="container">
 
-  <div class="container">
-    <h1>World<br>Anti-Philosophy</h1>
-    <div class="movimiento">
-      El movimiento del no-concepto.<br>
-      Naturaleza humana y rendimiento de élite.
+    <!-- Título -->
+    <h1 class="title">La Filosofía de la Experimentación</h1>
+    <div class="subtitle">Una ciencia singular para la vida · Fundada sobre el flujo, la simplicidad y la acción</div>
+
+    <!-- Manifiesto -->
+    <div class="manifesto">
+        <p>
+            Durante mucho tiempo, los seres humanos divagan de aquí para allá, sin conciencia ni capacidad mental dirigida. 
+            Existen los términos <strong class="highlight">intelectual</strong>, <strong class="highlight">inteligencia</strong>, 
+            <strong class="highlight">simplicidad</strong>, <strong class="highlight">control</strong>, 
+            <strong class="highlight">flujo</strong>, <strong class="highlight">psicopatía funcional</strong>, 
+            <strong class="highlight">arte marcial</strong>… y muchos más. La ciencia detrás de cada nombre adscrito a la mente humana 
+            ha sido determinar el curso de la existencia de los hombres, y dirigirlo de la forma más óptima.
+        </p>
+        <p>
+            Aunque los hombres puedan mapear su existencia, jamás podrían determinarla por completo, por lo que se les insta 
+            más bien a <strong>experimentarla solamente</strong>. Pero <strong>nosotros creemos</strong> que la ciencia de esta filosofía 
+            y sus compuestos determinará y dará una estructuracion a ese proceso de experimentación de la vida.
+        </p>
+        <p>
+            Así que finalmente, llegados a ese punto, es la siguiente: <strong>más o menos deslimitada, más o menos caótica, 
+            más o menos simplista, y compleja, más o menos fluidez y también psicopática, más o menos control y descontrol</strong>.
+        </p>
     </div>
 
-    <!-- NUEVA DECLARACIÓN CENTRAL -->
-    <div class="declaracion">
-      <h2>· La doctrina del agua clara ·</h2>
-      <p>
-        Creemos que las personas no deberían tener filosofías, conceptos, palabras. 
-        No deberían tener nada dentro de sí. Por dentro deberían ser limpios y claros como el agua.
-      </p>
-      <p>
-        No deberían fijarse en cada hoja del árbol, o se perderán la gloria celestial del árbol entero. 
-        Y no deberían detener el flujo, que simplemente acelera y acelera sin límites. 
-        Al no resistirse a ese flujo que quiere suceder por sí solo, ustedes simplemente serán uno con el todo, 
-        y su alcance será ilimitado.
-      </p>
+    <!-- Principios -->
+    <h2 style="font-size: 1.7rem; font-weight: 600; margin-top: 2rem; margin-bottom: 0.5rem;">⚡ Los principios</h2>
+    <div class="principles">
+
+        <div class="principle-card">
+            <h3>Solo hazlo</h3>
+            <div class="sub">Acción directa · Sin dilación</div>
+            <p><span class="tag">base</span> La procrastinación es enemiga de la vida. Cuando el impulso es claro, actúa. El movimiento disuelve la duda.</p>
+        </div>
+
+        <div class="principle-card">
+            <h3>Cómase ese sapo</h3>
+            <div class="sub">Lo difícil primero · Lo incómodo, ahora</div>
+            <p><span class="tag">estrategia</span> Enfrenta lo que más evitas al inicio del día. Lo que temes es lo que te da poder una vez superado.</p>
+        </div>
+
+        <div class="principle-card">
+            <h3>Simplifique al máximo, y luego agregue la complejidad que aviva la llama</h3>
+            <div class="sub">Orden esencial · Chispa creativa</div>
+            <p><span class="tag">estructura</span> Reduce a lo fundamental. Luego, añade solo aquello que enciende la pasión o el interés. La complejidad sin base es caos; la base sin complejidad es rigidez.</p>
+        </div>
+
+        <div class="principle-card">
+            <h3>Fluya como el agua, controle su oleaje</h3>
+            <div class="sub">Adaptabilidad · Dirección consciente</div>
+            <p><span class="tag">flujo</span> Adáptate a las circunstancias sin perder tu centro. El agua no lucha contra la roca, la rodea. Pero el agua también puede esculpir montañas con el tiempo.</p>
+        </div>
+
+        <div class="principle-card">
+            <h3>Más principios en desarrollo</h3>
+            <div class="sub">La filosofía es viva</div>
+            <p><span class="tag">evolución</span> Estos son los cimientos. La filosofía se expande con la experiencia. Nuevos principios surgirán al experimentar sin límites.</p>
+        </div>
+
     </div>
 
-    <!-- LOS 6 PRINCIPIOS ORIGINALES COMO ECOS DEL PASADO SUPERADO -->
-    <div class="principio">
-      <h2><span class="numero">I.</span> La antifilosofía</h2>
-      <p>No es un sistema. No promete iluminación ni felicidad. Nace del «ya lo intenté todo y nada funcionó». Es humana, sucia, contradictoria y real.</p>
+    <!-- Singular -->
+    <div class="singular">
+        <h2>🧬 Una filosofía singular</h2>
+        <p>
+            No es un sistema cerrado. Es un <strong>filtro</strong>, una <strong>tecnología de vida</strong> 
+            diseñada para <strong>enclaustrar los procesos dinámicos de la interacción humana con la vida</strong>, 
+            para que la experimentación continua sea el eje.
+        </p>
+        <p style="margin-top: 0.6rem;">
+            <strong>“Experimenten sin límites”</strong> — con eso cubrimos la parte de la experimentación de la vida. 
+            Es una buena añadidura a la vida de todos. En otras ocasiones, con otras cosas, se cubren otras cosas.
+        </p>
     </div>
 
-    <div class="principio">
-      <h2><span class="numero">II.</span> La naturaleza humana como texto sagrado</h2>
-      <p>Olvida los maestros antiguos. El único manual eres tú: tus sueños rotos, tus amores no correspondidos, tus diagnósticos, tus insultos.</p>
+    <!-- Cita -->
+    <div class="quote">
+        “No necesitas resolver la vida. Necesitas vivirla.”
+        <span>— Filosofía de la Experimentación</span>
     </div>
 
-    <div class="principio">
-      <h2><span class="numero">III.</span> El amor monumental no correspondido</h2>
-      <p>Algunas personas se convierten en un umbral, no en un destino. Amar sin ser correspondido revela el tamaño de tu propia capacidad de sentir.</p>
+    <!-- Footer -->
+    <div class="footer">
+        <span>© 2025 · La Filosofía de la Experimentación</span>
+        <span>Basado en los principios de <strong>Kevin Dutton</strong> y <strong>Bruce Lee</strong></span>
     </div>
 
-    <div class="principio">
-      <h2><span class="numero">IV.</span> La fluidez no es vacío</h2>
-      <p>Fluir no significa carecer de conciencia. Es moverse con todo el peso encima. Sin promesas, sin identidad fija. Materia en movimiento.</p>
-    </div>
-
-    <div class="principio">
-      <h2><span class="numero">V.</span> Nadie está haciendo las cuentas</h2>
-      <p>El cosmos no lleva un registro de tus fracasos. No hay karma que pagar, ni deuda cósmica. La vida no es justa ni injusta: simplemente es.</p>
-    </div>
-
-    <div class="principio">
-      <h2><span class="numero">VI.</span> La risa negra como victoria</h2>
-      <p>Cuando puedes reírte de tu propio intento fallido de ser un maestro zen impasible, ya has ganado algo. Eso no es cinismo. Es libertad.</p>
-    </div>
-
-    <div class="bloque-cita">
-      «Algo entre nosotros, lo digas como lo digas. Te necesité más que a nada en mi vida. Te amé más que a nadie en mi vida.»
-      <span>— DAFT PUNK, Something About Us</span>
-    </div>
-
-    <div class="final">
-      Liberation.<br>
-      Vuela, vuela, vuela.<br>
-      Nada significa nada. Esto es como es.
-      <div class="firma">— World Anti-Philosophy</div>
-    </div>
-  </div>
-
-  <script>
-    (function() {
-      const canvas = document.getElementById('particles');
-      const ctx = canvas.getContext('2d');
-      let particles = [];
-      const maxParticles = 70;
-
-      function resize() {
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-      }
-      window.addEventListener('resize', resize);
-      resize();
-
-      class Particle {
-        constructor() {
-          this.reset(true);
-        }
-        reset(initial = false) {
-          this.x = Math.random() * canvas.width;
-          this.y = initial ? Math.random() * canvas.height : canvas.height + 5;
-          this.size = Math.random() * 1.8 + 0.4;
-          this.speedY = -(Math.random() * 0.4 + 0.12);
-          this.opacity = Math.random() * 0.5 + 0.25;
-        }
-        update() {
-          this.y += this.speedY;
-          if (this.y < -10) {
-            this.y = canvas.height + 5;
-            this.x = Math.random() * canvas.width;
-          }
-        }
-        draw(ctx) {
-          ctx.beginPath();
-          ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-          ctx.fillStyle = `rgba(180, 150, 90, ${this.opacity})`;
-          ctx.fill();
-        }
-      }
-
-      for (let i = 0; i < maxParticles; i++) {
-        particles.push(new Particle());
-      }
-
-      function animate() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        particles.forEach(p => {
-          p.update();
-          p.draw(ctx);
-        });
-        requestAnimationFrame(animate);
-      }
-      animate();
-    })();
-  </script>
+</div>
 </body>
 </html>
