@@ -1,12 +1,15 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>▣ FILOSOFÍA DE VIDA ─ MOVIMIENTO PERPETUO</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700&display=swap');
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aesthetica · Philosophy of Life</title>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet" />
+
+    <style>
         * {
             margin: 0;
             padding: 0;
@@ -14,491 +17,212 @@
         }
 
         body {
-            font-family: 'Space Grotesk', sans-serif;
-            background: #0c0b0e;
-            color: #f0edf5;
-            overflow-x: hidden;
+            background-color: #0a0a0a;
+            color: #d4d4d4;
+            font-family: "Inter", sans-serif;
+            font-weight: 300;
+            line-height: 1.85;
             min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2.5rem 1.5rem;
         }
 
-        /* ─── Fondo dinámico con partículas ─── */
-        #particles-canvas {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            z-index: 0;
-            pointer-events: none;
-        }
-
-        /* ─── Contenido principal ─── */
-        .content {
-            position: relative;
-            z-index: 10;
-            max-width: 1200px;
+        .container {
+            max-width: 780px;
             margin: 0 auto;
-            padding: 2rem 1.5rem 4rem;
+            width: 100%;
         }
 
-        /* ─── Encabezado explosivo ─── */
-        .hero {
-            text-align: center;
-            padding: 4rem 0 3rem;
-            position: relative;
-        }
-
-        .hero h1 {
-            font-size: 4.5rem;
-            font-weight: 700;
+        .title {
+            font-size: 3.2rem;
+            font-weight: 350;
             letter-spacing: -0.03em;
+            color: #f0f0f0;
             line-height: 1.1;
-            background: linear-gradient(135deg, #f0f, #0ff, #f0f);
-            background-size: 300% 300%;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: gradienteLoco 6s ease-in-out infinite alternate;
-            text-shadow: 0 0 40px rgba(255, 0, 255, 0.3);
-            filter: drop-shadow(0 0 30px #00ffff44);
+            margin-bottom: 0.2rem;
         }
 
-        @keyframes gradienteLoco {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        .hero .subtitle {
-            font-size: 1.6rem;
+        .subtitle {
+            font-size: 1rem;
             font-weight: 300;
-            color: #b0a8c0;
-            margin-top: 0.5rem;
-            letter-spacing: 0.4em;
-            text-transform: uppercase;
-            opacity: 0.8;
-            animation: parpadeo 3s infinite alternate;
-        }
-
-        @keyframes parpadeo {
-            0% { opacity: 0.4; text-shadow: 0 0 10px #0ff; }
-            100% { opacity: 1; text-shadow: 0 0 30px #f0f; }
-        }
-
-        /* ─── Tarjetas flotantes (glassmorphism + glitch) ─── */
-        .card-grid {
-            display: flex;
-            flex-direction: column;
-            gap: 2.5rem;
-            margin: 4rem 0;
-        }
-
-        .card {
-            background: rgba(20, 18, 28, 0.55);
-            backdrop-filter: blur(15px) saturate(180%);
-            -webkit-backdrop-filter: blur(15px) saturate(180%);
-            border-radius: 48px;
-            padding: 2.5rem 3rem;
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(255, 0, 255, 0.1) inset;
-            transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1);
-            position: relative;
-            overflow: hidden;
-            transform: translateY(0);
-        }
-
-        .card:hover {
-            transform: translateY(-8px) scale(1.01);
-            border-color: rgba(255, 0, 255, 0.4);
-            box-shadow: 0 40px 80px -20px #000, 0 0 0 2px rgba(0, 255, 255, 0.3) inset;
-        }
-
-        .card::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle at 30% 40%, rgba(255, 0, 255, 0.05), transparent 60%);
-            pointer-events: none;
-            animation: rotarFondo 20s linear infinite;
-        }
-
-        @keyframes rotarFondo {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        .card h2 {
-            font-size: 2.2rem;
-            font-weight: 600;
-            margin-bottom: 1.2rem;
-            background: linear-gradient(135deg, #f0f, #0ff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            display: inline-block;
-            letter-spacing: -0.02em;
-            position: relative;
-            z-index: 2;
-        }
-
-        .card p {
-            font-size: 1.2rem;
-            line-height: 1.8;
-            color: #d0cce0;
-            position: relative;
-            z-index: 2;
-        }
-
-        .card .highlight {
-            color: #0ff;
-            font-weight: 600;
-            text-shadow: 0 0 20px #0ff3;
-        }
-
-        .card .highlight-pink {
-            color: #f0f;
-            font-weight: 600;
-            text-shadow: 0 0 20px #f0f3;
-        }
-
-        /* ─── Cita central (texto dinámico) ─── */
-        .quote-block {
-            text-align: center;
-            padding: 3rem 2rem;
-            margin: 3rem 0;
-            border-top: 2px solid rgba(255, 0, 255, 0.2);
-            border-bottom: 2px solid rgba(0, 255, 255, 0.2);
-            position: relative;
-        }
-
-        .quote-block blockquote {
-            font-size: 2rem;
-            font-weight: 300;
+            color: #7a7a7a;
+            border-left: 3px solid #2a2a2a;
+            padding-left: 1.2rem;
+            margin-bottom: 2.8rem;
             font-style: italic;
-            color: #e0d8f0;
-            line-height: 1.5;
-            letter-spacing: 0.02em;
-            max-width: 800px;
-            margin: 0 auto;
-            animation: respirar 4s ease-in-out infinite alternate;
         }
 
-        @keyframes respirar {
-            0% { text-shadow: 0 0 10px #0ff3, 0 0 30px #0ff1; }
-            100% { text-shadow: 0 0 30px #f0f3, 0 0 60px #f0f1; }
+        .body p {
+            margin-bottom: 1.7rem;
+            font-size: 1.08rem;
+            letter-spacing: 0.01em;
+            color: #d0d0d0;
         }
 
-        .quote-block .autor {
-            display: block;
-            margin-top: 1rem;
-            font-size: 1rem;
+        .body strong {
+            color: #eeeeee;
+            font-weight: 450;
+        }
+
+        .body em {
+            color: #b8b8b8;
+            font-style: italic;
+        }
+
+        .quote-block {
+            margin: 2rem 0 2.2rem 0;
+            padding-left: 1.5rem;
+            border-left: 3px solid #3a3a3a;
+            font-style: italic;
+            color: #b8b8b8;
+            font-size: 1.1rem;
+        }
+
+        .highlight {
+            color: #d0d0d0;
+            background: #1a1a1a;
+            padding: 0.1rem 0.5rem;
+            border-radius: 4px;
             font-weight: 400;
-            color: #8880a0;
-            letter-spacing: 0.3em;
-            text-transform: uppercase;
         }
 
-        /* ─── Lista de principios con estilo caótico ─── */
-        .principles-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.8rem;
-            margin: 3rem 0;
-        }
-
-        .principle-item {
-            background: rgba(10, 8, 18, 0.6);
-            backdrop-filter: blur(8px);
-            border-radius: 30px;
-            padding: 1.8rem 1.5rem;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: all 0.4s ease;
-            text-align: center;
-            transform: rotate(var(--rot, 0deg));
-        }
-
-        .principle-item:nth-child(odd) { --rot: -1deg; }
-        .principle-item:nth-child(even) { --rot: 1.5deg; }
-        .principle-item:nth-child(3n) { --rot: 2deg; }
-        .principle-item:nth-child(5n) { --rot: -2.5deg; }
-
-        .principle-item:hover {
-            transform: scale(1.05) rotate(0deg);
-            border-color: rgba(0, 255, 255, 0.4);
-            box-shadow: 0 0 40px rgba(255, 0, 255, 0.15);
-        }
-
-        .principle-item .number {
-            display: block;
-            font-size: 3rem;
-            font-weight: 700;
-            background: linear-gradient(135deg, #f0f, #0ff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            line-height: 1;
-            margin-bottom: 0.3rem;
-        }
-
-        .principle-item h3 {
-            font-size: 1.4rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            color: #f0edf5;
-        }
-
-        .principle-item p {
-            font-size: 1rem;
-            color: #b0a8c0;
-            line-height: 1.5;
-        }
-
-        /* ─── Pie de página ─── */
-        .footer {
-            margin-top: 5rem;
+        .closing-block {
+            margin-top: 2.8rem;
             padding-top: 2rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 1rem;
-            font-size: 0.9rem;
-            color: #5a5270;
+            border-top: 1px solid #2a2a2a;
+            font-size: 1.15rem;
+            font-weight: 350;
+            color: #c0c0c0;
+            line-height: 1.9;
         }
 
-        .footer .tagline {
+        .closing-block strong {
+            color: #f0f0f0;
+            font-weight: 450;
+        }
+
+        .ending-line {
+            margin-top: 2.5rem;
+            font-size: 1.2rem;
+            font-weight: 400;
+            color: #e0e0e0;
+            letter-spacing: 0.02em;
+        }
+
+        .ending-line em {
+            font-style: italic;
+            color: #aaa;
             font-weight: 300;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            color: #7a72a0;
         }
 
-        .footer .tagline span {
-            color: #f0f;
-            text-shadow: 0 0 20px #f0f3;
+        .ending-line strong {
+            color: #f0f0f0;
+            font-weight: 450;
         }
 
-        /* ─── Efecto de texto "glitch" en algunos lugares ─── */
-        .glitch-text {
-            display: inline-block;
-            position: relative;
-            animation: glitch 6s infinite;
+        .imperfect-close {
+            margin-top: 1rem;
+            font-size: 0.95rem;
+            color: #666;
+            font-style: italic;
+            letter-spacing: 0.02em;
         }
 
-        @keyframes glitch {
-            0%, 90%, 100% { transform: translate(0); }
-            92% { transform: translate(-2px, 2px) skewX(2deg); }
-            94% { transform: translate(3px, -1px) skewX(-3deg); }
-            96% { transform: translate(-1px, 3px) skewX(1deg); }
+        .footer {
+            margin-top: 4rem;
+            font-size: 0.75rem;
+            color: #333;
+            text-align: center;
+            letter-spacing: 0.06em;
+            font-weight: 300;
         }
 
-        /* ─── Responsive ─── */
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2.8rem; }
-            .hero .subtitle { font-size: 1.1rem; letter-spacing: 0.2em; }
-            .card { padding: 1.8rem 1.5rem; }
-            .card h2 { font-size: 1.8rem; }
-            .quote-block blockquote { font-size: 1.4rem; }
-            .principles-grid { grid-template-columns: 1fr; }
-        }
-
-        @media (max-width: 480px) {
-            .hero h1 { font-size: 2.2rem; }
-            .card p { font-size: 1rem; }
+        @media (max-width: 640px) {
+            .title {
+                font-size: 2.2rem;
+            }
+            .body p {
+                font-size: 1rem;
+            }
+            .closing-block {
+                font-size: 1rem;
+            }
+            .ending-line {
+                font-size: 1rem;
+            }
         }
     </style>
 </head>
 <body>
 
-    <!-- ─── CANVAS DE PARTÍCULAS ─── -->
-    <canvas id="particles-canvas"></canvas>
+<div class="container">
 
-    <!-- ─── CONTENIDO ─── -->
-    <div class="content">
+    <h1 class="title">Philosophy Aesthetica</h1>
+    <div class="subtitle">mind as everything · life as flow</div>
 
-        <!-- HERO -->
-        <header class="hero">
-            <h1>▣ MOVIMIENTO<br>PERPETUO</h1>
-            <p class="subtitle">La filosofía que no se piensa · se vive</p>
-        </header>
+    <div class="body">
 
-        <!-- CARD PRINCIPAL: NATURALEZA DE LA MENTE -->
-        <div class="card-grid">
-            <div class="card">
-                <h2>🧠 La gran trampa</h2>
-                <p>
-                    La mente humana es un artefacto engañoso. Nació hace millones de años para sobrevivir, 
-                    pero hoy <span class="highlight">limita</span> tu experiencia.  
-                    Te dice que <span class="highlight-pink">mapees</span>, que <span class="highlight-pink">controles</span>, 
-                    que <span class="highlight-pink">resuelvas</span>.  
-                    Pero la vida no es un problema.  
-                    Es <span class="highlight">masa y movimiento perpetuo</span>.  
-                    La conciencia, cuando se vuelve rígida, es una prisión.
-                </p>
-            </div>
+        <p>Let us begin by asking: what is existence?<br />
+        And we will posit, as the totality of existence — to avoid wandering into other matters — <strong>the mind</strong>.<br />
+        As the beginning and end of our existence and of the world.</p>
 
-            <div class="card">
-                <h2>🌊 La respuesta ya está ocurriendo</h2>
-                <p>
-                    No necesitas <span class="highlight">tecnologías de vida</span> ni <span class="highlight">sistemas</span>.  
-                    El viento entra por la ventana. Tu mascota respira. Tú lees esto.  
-                    <span class="highlight-pink">Todo esto ya está sucediendo</span>.  
-                    La experiencia no espera tu permiso.  
-                    Solo tienes que <span class="highlight">dejar de fiscalizarla</span> y empezar a <span class="highlight-pink">devorarla</span>.
-                </p>
-            </div>
-        </div>
+        <p>Over many years, complete philosophical systems have been created.<br />
+        This philosophy of life, rather, aims to be <strong>fragmentary teachings</strong>.<br />
+        If it serves you, good. And if not, that is fine too.<br />
+        Life is not something to be solved.<br />
+        The mind itself must be <strong>unstable</strong>, never limited, never fixed to any state, always open, because that is its nature.<br />
+        And so we will live until the end of our days.</p>
 
-        <!-- CITA -->
+        <p>Finally, read with open eyes and charm.<br />
+        These ideas seek to <strong>improve what we understand by mind</strong>, not what to do with it.<br />
+        It does not cover lifestyle aspects, only the mind.<br />
+        To propose, from the mind itself, simply how to live.<br />
+        And once we know how to live, as far as we are concerned, that is all we cover.<br />
+        Let us proceed and close.<br />
+        The rest, for you, will be <strong>absolute uncertainty</strong>.</p>
+
+        <p>The mind is everything, and it is our refuge.<br />
+        It is the word <em>knowledge</em>, tasked, through knowledge, with creating the world we see, and with creating ourselves day by day.</p>
+
+        <p>It has been proposed that a mind should be closed, without thoughts, and without material desires.<br />
+        That is a closed equation that proposes life and lifestyle, a closed whole, definitive to the end.</p>
+
+        <p>But no.<br />
+        The mind should not be like that.<br />
+        The mind must have an <strong>attitude of uncertainty</strong> about the future, speak of its immediate states, and in that nature, not worry, not be afraid, but go from here to there, understanding each state and <strong>flowing</strong> through that vast and complex nature of the mind until the end of our days.</p>
+
         <div class="quote-block">
-            <blockquote>
-                “La vida no se resuelve. Se vive. Y al vivirla, la resuelves sin darte cuenta.”
-                <span class="autor">— Filosofía del Movimiento Perpetuo</span>
-            </blockquote>
+            Among those ideas was Bruce Lee's wonderful water, water that adapts, that strikes or flows, but that <strong>you be water</strong>.<br />
+            Water flows, it is everything and nothing at once, and it does not know where the river ends, it simply flows, and without reaching the end, it is already there.
         </div>
 
-        <!-- PRINCIPIOS CLAVE -->
-        <h2 style="font-size: 2.5rem; font-weight: 600; text-align: center; margin: 3rem 0 1.5rem; background: linear-gradient(135deg, #f0f, #0ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
-            ⚡ Principios de la experiencia total
-        </h2>
+        <p>This is a complete systematic closure that proposes how you should live, the nature of the mind, and the free state to which it is subjected, not one limited or clouded, or one that tells us what our future will be, or that, rather than understanding the mind, it should be done away with.</p>
 
-        <div class="principles-grid">
-            <div class="principle-item">
-                <span class="number">01</span>
-                <h3>Sin mapas</h3>
-                <p>No hay plano. Solo hay territorio. Camina sin saber.</p>
-            </div>
-            <div class="principle-item">
-                <span class="number">02</span>
-                <h3>El ahora es todo</h3>
-                <p>El pasado es polvo. El futuro es un espejismo. Solo el instante existe.</p>
-            </div>
-            <div class="principle-item">
-                <span class="number">03</span>
-                <h3>Masa y movimiento</h3>
-                <p>La vida es pura energía en flujo. No te detengas a explicarla.</p>
-            </div>
-            <div class="principle-item">
-                <span class="number">04</span>
-                <h3>Devora la experiencia</h3>
-                <p>No la analices. No la juzgues. Cómela entera.</p>
-            </div>
-            <div class="principle-item">
-                <span class="number">05</span>
-                <h3>Más allá de los espejismos</h3>
-                <p>Psicopatía, luz, oscuridad, conceptos vacíos. La realidad es más simple.</p>
-            </div>
-            <div class="principle-item">
-                <span class="number">06</span>
-                <h3>Sin límites</h3>
-                <p>No hay fronteras. La conciencia expandida lo abarca todo.</p>
-            </div>
-        </div>
-
-        <!-- CIERRE ÉPICO -->
-        <div class="card" style="margin-top: 3rem; text-align: center;">
-            <h2>🔥 SÉ MÁXIMO</h2>
-            <p style="font-size: 1.3rem;">
-                Esta ciencia no es para los débiles.  
-                Es para quienes quieren <span class="highlight">romper el cascarón</span> de la mente limitada.  
-                Para quienes están listos para <span class="highlight-pink">ser</span>, sin preguntar cómo.  
-                <br><br>
-                <span style="font-size: 1.6rem; font-weight: 700; background: linear-gradient(135deg, #f0f, #0ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
-                    Manteneos fuertes.
-                </span>
-            </p>
-        </div>
-
-        <!-- FOOTER -->
-        <footer class="footer">
-            <span class="tagline">◈ MOVIMIENTO PERPETUO ◈</span>
-            <span class="tagline">la vida es <span>experiencia</span> sin filtro</span>
-            <span>© 2025 — filosofía viva</span>
-        </footer>
+        <p>With this, we close this <strong>fragmentary and incomplete philosophy</strong>.<br />
+        Who knows how this will open each person's mind, their perspective on life, and the way they will experience it from now on.</p>
 
     </div>
 
-    <script>
-        // ─── PARTÍCULAS CON CANVAS ───
-        (function() {
-            const canvas = document.getElementById('particles-canvas');
-            const ctx = canvas.getContext('2d');
-            let w, h;
-            const particles = [];
-            const NUM = 180;
+    <div class="closing-block">
+        <strong>I suppose this is it.</strong> With this, we close.<br />
+        <span style="font-size: 1.3rem; color: #c0c0c0; letter-spacing: 0.05em;">fuck off!</span><br />
+        This is a complete and imperfect whole.<br />
+        Words will be missing.<br />
+        This closure is imperfect.
+    </div>
 
-            function resize() {
-                w = canvas.width = window.innerWidth;
-                h = canvas.height = window.innerHeight;
-            }
-            window.addEventListener('resize', resize);
-            resize();
+    <div class="ending-line">
+        <em>So what?</em><br />
+        <strong>Goodbye.</strong>
+    </div>
 
-            class Particle {
-                constructor() {
-                    this.reset();
-                }
-                reset() {
-                    this.x = Math.random() * w;
-                    this.y = Math.random() * h;
-                    this.size = Math.random() * 2.5 + 0.5;
-                    this.speedX = (Math.random() - 0.5) * 0.5;
-                    this.speedY = (Math.random() - 0.5) * 0.5;
-                    this.alpha = Math.random() * 0.6 + 0.2;
-                    this.color = Math.random() > 0.5 ? '255, 0, 255' : '0, 255, 255';
-                }
-                update() {
-                    this.x += this.speedX;
-                    this.y += this.speedY;
-                    if (this.x < 0 || this.x > w) this.speedX *= -1;
-                    if (this.y < 0 || this.y > h) this.speedY *= -1;
-                }
-                draw() {
-                    ctx.beginPath();
-                    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-                    ctx.fillStyle = `rgba(${this.color}, ${this.alpha})`;
-                    ctx.fill();
-                    // resplandor
-                    ctx.shadowColor = `rgba(${this.color}, 0.3)`;
-                    ctx.shadowBlur = 12;
-                    ctx.fill();
-                    ctx.shadowBlur = 0;
-                }
-            }
+    <div class="imperfect-close">✦ imperfection is the only perfection ✦</div>
 
-            for (let i = 0; i < NUM; i++) {
-                particles.push(new Particle());
-            }
+    <div class="footer">aesthetica · unstable mind · life that flows</div>
 
-            function drawLines() {
-                for (let i = 0; i < particles.length; i++) {
-                    for (let j = i + 1; j < particles.length; j++) {
-                        const dx = particles[i].x - particles[j].x;
-                        const dy = particles[i].y - particles[j].y;
-                        const dist = Math.sqrt(dx*dx + dy*dy);
-                        if (dist < 150) {
-                            const alpha = (1 - dist / 150) * 0.25;
-                            ctx.beginPath();
-                            ctx.moveTo(particles[i].x, particles[i].y);
-                            ctx.lineTo(particles[j].x, particles[j].y);
-                            ctx.strokeStyle = `rgba(150, 140, 200, ${alpha})`;
-                            ctx.lineWidth = 0.6;
-                            ctx.stroke();
-                        }
-                    }
-                }
-            }
-
-            function animate() {
-                ctx.clearRect(0, 0, w, h);
-                particles.forEach(p => { p.update(); p.draw(); });
-                drawLines();
-                requestAnimationFrame(animate);
-            }
-
-            animate();
-        })();
-    </script>
+</div>
 
 </body>
 </html>
