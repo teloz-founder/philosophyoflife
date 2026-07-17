@@ -3,12 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AntiPhilosophy Mystycal State</title>
+  <title>AntiPhilosophy Mystycal State v2.0</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&display=swap" rel="stylesheet" />
   <style>
-    /* Reset y fondo */
     * {
       margin: 0;
       padding: 0;
@@ -39,7 +38,6 @@
       transition: all 0.2s ease;
     }
 
-    /* Tipografía inspirada en OpenAI */
     h1 {
       font-size: 3.2rem;
       font-weight: 700;
@@ -50,6 +48,20 @@
       border-bottom: 2px solid #000000;
       padding-bottom: 0.3rem;
       display: inline-block;
+    }
+
+    .version-badge {
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      background: #000000;
+      color: #ffffff;
+      padding: 0.2rem 0.8rem;
+      border-radius: 40px;
+      display: inline-block;
+      margin-left: 0.5rem;
+      vertical-align: middle;
+      transform: translateY(-4px);
     }
 
     .subhead {
@@ -119,6 +131,91 @@
       border-radius: 6px;
     }
 
+    /* NUEVA SECCIÓN V2.0 - CIENCIA ACTUALIZADA */
+    .update-v2 {
+      margin: 2.5rem 0 2.5rem 0;
+      padding: 2.5rem 2.5rem;
+      background: #000000;
+      color: #ffffff;
+      border-radius: 32px;
+      border: 1px solid #333333;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+    }
+
+    .update-v2 .update-title {
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #aaaaaa;
+      border-bottom: 1px solid #333333;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .update-v2 .update-title span {
+      color: #ffffff;
+      background: #2a2a2a;
+      padding: 0.1rem 0.6rem;
+      border-radius: 40px;
+      font-size: 0.7rem;
+      letter-spacing: 0.05em;
+      margin-left: 0.5rem;
+    }
+
+    .update-v2 p {
+      font-size: 1.2rem;
+      font-weight: 400;
+      line-height: 1.7;
+      color: #e8e8e8;
+      margin-bottom: 1.5rem;
+    }
+
+    .update-v2 p:last-of-type {
+      margin-bottom: 0;
+    }
+
+    .update-v2 strong {
+      color: #ffffff;
+      font-weight: 700;
+      background: rgba(255, 255, 255, 0.08);
+      padding: 0.1rem 0.3rem;
+      border-radius: 4px;
+    }
+
+    .update-v2 .highlight-box {
+      background: rgba(255, 255, 255, 0.04);
+      border-left: 4px solid #ffffff;
+      padding: 1.2rem 1.5rem;
+      margin: 1.5rem 0 1rem 0;
+      border-radius: 0 16px 16px 0;
+      font-style: italic;
+    }
+
+    .update-v2 .highlight-box strong {
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    .update-v2 .call-to-action {
+      font-size: 1.4rem;
+      font-weight: 700;
+      text-align: center;
+      color: #ffffff;
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid #333333;
+      letter-spacing: -0.02em;
+    }
+
+    .update-v2 .call-to-action .thanks {
+      display: block;
+      font-size: 1rem;
+      font-weight: 300;
+      color: #999999;
+      margin-top: 0.3rem;
+      letter-spacing: 0.02em;
+    }
+
     .tesis {
       margin: 2.5rem 0 2.5rem 0;
       padding: 2rem 2rem;
@@ -148,36 +245,6 @@
       font-size: 1rem;
     }
 
-    .callout {
-      margin: 2rem 0 2rem 0;
-      padding: 2rem 2rem;
-      background: #000000;
-      color: #ffffff;
-      border-radius: 32px;
-      text-align: center;
-    }
-
-    .callout p {
-      font-size: 1.45rem;
-      font-weight: 600;
-      letter-spacing: -0.02em;
-      line-height: 1.4;
-      margin-bottom: 0.5rem;
-    }
-
-    .callout .sub {
-      font-size: 1rem;
-      font-weight: 300;
-      color: #bbbbbb;
-      margin-top: 0.2rem;
-      letter-spacing: 0.02em;
-    }
-
-    .callout .sub strong {
-      color: #ffffff;
-      font-weight: 600;
-    }
-
     .footer {
       margin-top: 3rem;
       padding-top: 1.5rem;
@@ -200,7 +267,6 @@
       font-size: 1rem;
     }
 
-    /* Efectos sutiles */
     .fade-in {
       animation: fadeIn 0.8s ease-out both;
     }
@@ -209,7 +275,6 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
-    /* Responsive */
     @media (max-width: 600px) {
       .container {
         padding: 1.8rem 1.2rem;
@@ -217,11 +282,22 @@
       h1 {
         font-size: 2.2rem;
       }
+      .version-badge {
+        font-size: 0.6rem;
+        margin-left: 0.2rem;
+        transform: translateY(-2px);
+      }
       .desc {
         font-size: 1.1rem;
         padding: 1.2rem 1.2rem;
       }
-      .callout p {
+      .update-v2 {
+        padding: 1.5rem 1.2rem;
+      }
+      .update-v2 p {
+        font-size: 1rem;
+      }
+      .update-v2 .call-to-action {
         font-size: 1.2rem;
       }
       .triada {
@@ -242,7 +318,10 @@
   <div class="container fade-in">
 
     <!-- Encabezado -->
-    <h1>AntiPhilosophy<br />Mystycal State</h1>
+    <h1>
+      AntiPhilosophy<br />Mystycal State
+      <span class="version-badge">v2.0</span>
+    </h1>
     <div class="subhead">
       <span>✦</span> La ciencia de los seres que son capaces de afrontar cualquier reto, vivir vidas óptimas y descansar en paz en sus tumbas <span>🕊️</span>
     </div>
@@ -264,16 +343,31 @@
       </p>
     </div>
 
-    <!-- Llamado directo -->
-    <div class="callout">
-      <p>Vayan en contra de la seguridad de vuestras mentes.</p>
-      <div class="sub">
-        Sin importar qué, ni cómo, ni en qué se base.<br />
-        Eso es todo lo que puedo decir.
+    <!-- ========================================== -->
+    <!-- NUEVA ACTUALIZACIÓN V2.0 - CIENCIA PRIMORDIAL -->
+    <!-- ========================================== -->
+    <div class="update-v2">
+      <div class="update-title">
+        ⚡ Actualización v 2.0 <span>ciencia primordial</span>
+      </div>
+
+      <p>
+        El mecanismo <strong>primario y último de la mente</strong> (la búsqueda de certezas y seguridad) en <strong>contraposición</strong> al presente (y a la vida como método de imperfección e inacabación que permite estar más liberados y por ende acceder a la totalidad del ser).
+      </p>
+
+      <div class="highlight-box">
+        <p style="font-size:1.1rem; margin-bottom:0;">
+          “Es imposible cuando la mente busca seguridad, lo contrario a esto es <strong>dejarse morir en vida</strong>, lo que propone Eckhart Tolle, dejar caer esa seguridad contra viento y marea y vivir ahí, en el <strong>silencio entre dos pensamientos</strong>.”
+        </p>
+      </div>
+
+      <div class="call-to-action">
+        ¡Este sitio les insta a que lo hagan!
+        <span class="thanks">y con esto cerramos, muchas gracias por leer esto</span>
       </div>
     </div>
 
-    <!-- Tesis total -->
+    <!-- Tesis total (original, como cierre conceptual) -->
     <div class="tesis">
       <p>
         <strong>Así que esta es la tesis total de la antifilosofía.</strong> Se pudo haber hecho mejor, pero me reservo que sea <strong>imperfecto</strong>, solo para <strong>sabios entendedores</strong>.
@@ -289,7 +383,7 @@
     <!-- Cierre -->
     <div class="footer">
       <span class="emoji">✦</span>
-      <span>AntiPhilosophy Mystycal State · 2026</span>
+      <span>AntiPhilosophy Mystycal State · v2.0 · 2026</span>
       <span class="yeah">¡Yeah!</span>
     </div>
 
