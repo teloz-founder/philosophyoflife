@@ -3,10 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>HALLUCINATION STATE</title>
-  <!-- Fuente con carácter industrial / mecanografiado -->
-  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+  <title>AntiPhilosophy Mystycal State</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&display=swap" rel="stylesheet" />
   <style>
+    /* Reset y fondo */
     * {
       margin: 0;
       padding: 0;
@@ -14,316 +16,282 @@
     }
 
     body {
-      background: #0b0b0b;
-      background-image: radial-gradient(circle at 20% 30%, #1a1a1a 0%, #030303 90%);
-      min-height: 100vh;
+      background-color: #ffffff;
+      color: #000000;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      font-weight: 300;
+      line-height: 1.6;
+      padding: 2rem 1rem;
       display: flex;
       justify-content: center;
       align-items: center;
-      font-family: 'Space Mono', 'Courier New', monospace;
-      padding: 2rem 1.5rem;
-      color: #d4d4d4;
-      line-height: 1.6;
-      position: relative;
-      overflow-x: hidden;
-    }
-
-    /* Efecto de "señal / interferencia" muy sutil en el fondo */
-    body::before {
-      content: '';
-      position: fixed;
-      inset: 0;
-      background: repeating-linear-gradient(0deg, rgba(0, 255, 200, 0.012) 0px, rgba(0, 0, 0, 0.1) 2px, transparent 4px);
-      pointer-events: none;
-      z-index: 0;
+      min-height: 100vh;
     }
 
     .container {
       max-width: 820px;
       width: 100%;
-      background: rgba(10, 10, 10, 0.65);
-      backdrop-filter: blur(3px);
-      -webkit-backdrop-filter: blur(3px);
-      border: 1px solid rgba(100, 255, 220, 0.15);
-      box-shadow: 0 0 60px rgba(0, 255, 200, 0.06), inset 0 0 80px rgba(0, 20, 20, 0.4);
       padding: 3rem 2.5rem;
-      border-radius: 24px;
-      position: relative;
-      z-index: 2;
+      background: #ffffff;
+      border: 1px solid #eaeaea;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.03);
+      border-radius: 32px;
       transition: all 0.2s ease;
     }
 
-    /* Línea decorativa “aceleración” */
-    .glitch-line {
-      width: 100%;
-      height: 2px;
-      background: linear-gradient(90deg, transparent, #4affd0, #b0f0ff, #4affd0, transparent);
-      margin: 1.2rem 0 2rem 0;
-      opacity: 0.5;
-      animation: pulseGlitch 3s ease-in-out infinite alternate;
-    }
-
-    @keyframes pulseGlitch {
-      0% { opacity: 0.2; transform: scaleX(0.98); }
-      100% { opacity: 0.8; transform: scaleX(1.02); }
-    }
-
+    /* Tipografía inspirada en OpenAI */
     h1 {
-      font-size: 2.8rem;
+      font-size: 3.2rem;
       font-weight: 700;
-      letter-spacing: 6px;
-      text-transform: uppercase;
-      color: #d0fff0;
-      text-shadow: 0 0 12px #1affd0, 0 0 30px #00a3ff40;
-      line-height: 1.2;
-      margin-bottom: 0.25rem;
-      font-family: 'Space Mono', monospace;
-      word-break: break-word;
+      letter-spacing: -0.04em;
+      line-height: 1.1;
+      margin-bottom: 0.2rem;
+      color: #000000;
+      border-bottom: 2px solid #000000;
+      padding-bottom: 0.3rem;
+      display: inline-block;
     }
 
     .subhead {
-      font-size: 0.9rem;
-      color: #8aa8a0;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      border-left: 3px solid #3affd0;
-      padding-left: 1rem;
-      margin-top: 0.2rem;
-      opacity: 0.7;
-    }
-
-    .manifiesto {
-      margin: 2.2rem 0 2.5rem 0;
-      padding: 1.8rem 1.5rem;
-      background: rgba(0, 20, 20, 0.3);
-      border-radius: 16px;
-      border-left: 4px solid #3affd0;
-      box-shadow: inset 0 0 30px rgba(0, 255, 200, 0.04);
       font-size: 1rem;
-      white-space: pre-wrap;
-      word-break: break-word;
-      color: #d0e6e0;
-      font-style: italic;
+      font-weight: 400;
+      color: #555555;
+      letter-spacing: 0.02em;
+      margin-top: 0.5rem;
+      margin-bottom: 2.5rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid #eaeaea;
     }
 
-    .manifiesto p {
-      margin-bottom: 1rem;
+    .subhead span {
+      font-weight: 600;
+      color: #000000;
     }
-    .manifiesto p:last-child {
+
+    .desc {
+      font-size: 1.35rem;
+      font-weight: 400;
+      line-height: 1.5;
+      margin: 2rem 0 2.5rem 0;
+      padding: 1.8rem 1.8rem;
+      background: #f8f8f8;
+      border-radius: 24px;
+      border-left: 6px solid #000000;
+      color: #1a1a1a;
+    }
+
+    .desc small {
+      display: block;
+      margin-top: 0.5rem;
+      font-size: 1rem;
+      font-weight: 300;
+      color: #555;
+    }
+
+    .triada {
+      margin: 2.5rem 0 2.5rem 0;
+      padding: 1.8rem 2rem;
+      background: #f2f2f2;
+      border-radius: 24px;
+    }
+
+    .triada h2 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: #000000;
+      margin-bottom: 0.5rem;
+    }
+
+    .triada p {
+      font-size: 1.05rem;
+      font-weight: 400;
+      color: #1a1a1a;
       margin-bottom: 0;
     }
 
-    /* bloque de pregunta destacada */
-    .pregunta-clave {
-      background: rgba(0, 255, 200, 0.04);
-      border: 1px solid rgba(0, 255, 200, 0.2);
-      border-radius: 40px;
-      padding: 1.8rem 2.2rem;
-      margin: 2.5rem 0 2.2rem 0;
-      text-align: center;
-      box-shadow: 0 0 40px rgba(0, 255, 200, 0.04);
-    }
-
-    .pregunta-clave p {
-      font-size: 1.35rem;
+    .triada strong {
       font-weight: 700;
-      color: #b3fff0;
-      letter-spacing: 1px;
-      text-shadow: 0 0 8px #1affd060;
+      color: #000000;
+      background: #ffffff;
+      padding: 0.1rem 0.4rem;
+      border-radius: 6px;
     }
 
-    .pregunta-clave span {
-      display: inline-block;
-      border-bottom: 2px dashed #3affd0;
-      padding-bottom: 0.2rem;
+    .tesis {
+      margin: 2.5rem 0 2.5rem 0;
+      padding: 2rem 2rem;
+      border: 1px solid #cccccc;
+      border-radius: 24px;
+      background: #fafafa;
     }
 
-    .grid-conceptos {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.2rem;
-      margin: 2.2rem 0 1.8rem 0;
-    }
-
-    .concepto {
-      background: rgba(0, 20, 20, 0.25);
-      border-radius: 30px;
-      padding: 1.4rem 1.2rem;
-      border: 1px solid rgba(100, 255, 220, 0.08);
-      backdrop-filter: blur(2px);
-      transition: 0.25s ease;
-      text-align: center;
-    }
-
-    .concepto:hover {
-      background: rgba(0, 255, 200, 0.06);
-      border-color: rgba(100, 255, 220, 0.3);
-      transform: scale(1.01);
-    }
-
-    .concepto .emoji-big {
-      font-size: 2.2rem;
-      display: block;
-      margin-bottom: 0.4rem;
-      filter: drop-shadow(0 0 6px #3affd060);
-    }
-
-    .concepto .label {
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      color: #7bbbb0;
-    }
-
-    .concepto .valor {
-      font-weight: 700;
+    .tesis p {
       font-size: 1.1rem;
-      color: #d4fff5;
-      margin-top: 0.2rem;
-    }
-
-    .frase-final {
-      margin: 2.8rem 0 1.5rem 0;
-      font-size: 1.6rem;
-      font-weight: 700;
-      text-align: center;
-      color: #d0fff0;
-      text-shadow: 0 0 20px #0affc0;
-      letter-spacing: 2px;
-      border-top: 1px solid rgba(0, 255, 200, 0.15);
-      padding-top: 2.2rem;
-      line-height: 1.4;
-    }
-
-    .frase-final small {
-      display: block;
-      font-size: 1rem;
       font-weight: 400;
-      color: #7ea89e;
-      text-shadow: none;
-      letter-spacing: 1px;
-      margin-top: 0.5rem;
+      color: #1a1a1a;
+      margin-bottom: 1rem;
+      line-height: 1.7;
     }
 
-    .byline {
-      margin-top: 2.5rem;
-      text-align: right;
-      font-size: 0.75rem;
-      color: #44665e;
-      letter-spacing: 2px;
-      border-top: 1px solid rgba(255, 255, 255, 0.02);
+    .tesis p:last-child {
+      margin-bottom: 0;
+    }
+
+    .tesis .imperfect {
+      font-style: italic;
+      color: #333;
+      border-top: 1px solid #ddd;
+      padding-top: 1.2rem;
+      margin-top: 1.2rem;
+      font-size: 1rem;
+    }
+
+    .callout {
+      margin: 2rem 0 2rem 0;
+      padding: 2rem 2rem;
+      background: #000000;
+      color: #ffffff;
+      border-radius: 32px;
+      text-align: center;
+    }
+
+    .callout p {
+      font-size: 1.45rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      line-height: 1.4;
+      margin-bottom: 0.5rem;
+    }
+
+    .callout .sub {
+      font-size: 1rem;
+      font-weight: 300;
+      color: #bbbbbb;
+      margin-top: 0.2rem;
+      letter-spacing: 0.02em;
+    }
+
+    .callout .sub strong {
+      color: #ffffff;
+      font-weight: 600;
+    }
+
+    .footer {
+      margin-top: 3rem;
       padding-top: 1.5rem;
+      border-top: 1px solid #eaeaea;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.85rem;
+      color: #777;
+      letter-spacing: 0.02em;
     }
 
-    /* parpadeo sutil */
-    .blink-slow {
-      animation: blinkFade 3.2s infinite alternate;
-    }
-    @keyframes blinkFade {
-      0% { opacity: 0.25; }
-      100% { opacity: 0.9; }
+    .footer .emoji {
+      font-size: 1.2rem;
     }
 
-    /* responsive */
+    .footer .yeah {
+      font-weight: 600;
+      color: #000;
+      font-size: 1rem;
+    }
+
+    /* Efectos sutiles */
+    .fade-in {
+      animation: fadeIn 0.8s ease-out both;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Responsive */
     @media (max-width: 600px) {
       .container {
         padding: 1.8rem 1.2rem;
       }
       h1 {
-        font-size: 2rem;
-        letter-spacing: 3px;
+        font-size: 2.2rem;
       }
-      .grid-conceptos {
-        grid-template-columns: 1fr;
-        gap: 0.8rem;
-      }
-      .pregunta-clave p {
+      .desc {
         font-size: 1.1rem;
+        padding: 1.2rem 1.2rem;
       }
-      .manifiesto {
-        padding: 1.2rem 1rem;
-        font-size: 0.9rem;
+      .callout p {
+        font-size: 1.2rem;
       }
-      .frase-final {
-        font-size: 1.3rem;
+      .triada {
+        padding: 1.2rem 1.2rem;
       }
-    }
-
-    /* Efecto de “hallucination” en algunas letras al pasar el mouse */
-    .hallucinate-hover:hover {
-      animation: glitchText 0.4s steps(1) infinite;
-    }
-    @keyframes glitchText {
-      0% { text-shadow: 2px 0 #ff00c0, -2px 0 #00ffff; }
-      25% { text-shadow: -3px 0 #ff00c0, 3px 0 #00ffff; }
-      50% { text-shadow: 2px 0 #ff00c0, -2px 0 #00ffff; }
-      75% { text-shadow: -2px 0 #ff00c0, 3px 0 #00ffff; }
-      100% { text-shadow: 2px 0 #ff00c0, -2px 0 #00ffff; }
+      .tesis {
+        padding: 1.2rem 1.2rem;
+      }
+      .footer {
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="container">
+  <div class="container fade-in">
 
-    <!-- Título + línea -->
-    <h1>HALLUCINATION<br />STATE</h1>
-    <div class="subhead">⟡ antifilosofía · aceleración consciente ⟡</div>
-    <div class="glitch-line"></div>
-
-    <!-- Manifiesto completo (texto original) -->
-    <div class="manifiesto">
-      <p>Los seres humanos son consciencia pura. Objetivos de la materia misma, materia misma que comienza y termina en los confines del mundo, confines que empiezan en la mente y terminan en la gravedad y en la cantidad de kilómetros que posee el planeta.</p>
-
-      <p>Ahora imaginemos una metáfora, quizás nadie te la ha hecho saber; todo ser humano es como un auto. Están los autos más o menos potentes, los autos de velocidad lenta y los autos hipersónicos que no tienen límite alguno, excepto los de la ley, jaja.</p>
-
-      <p>Ahora yo te pregunto, ¿qué es el hallucination state, y cómo llegas al último tipo de carro?</p>
-
-      <p>Y he aquí no hay respuestas obvias ni sencillas, pero la puerta es morir en vida, déjate arrastrar por todo lo que consideres muerte, un estado alucinante que atrapa tus sentidos y va más allá del control, te nubla por completo, es bueno eso, y viviendo desde ahí, eres un Dios del todo y de la nada, renaces y mueres en la misma vida, eres el principio y el fin, viviendo desde ahí, estás en sintonía con el flujo excelente y maravilloso de la corta vida que posees, hasta que un día mueras.</p>
-
-      <p>Vive así, y verás lo hallucination que es, simplemente acelerar, esa es la hallucination, ahora vive y muere así, bye.</p>
+    <!-- Encabezado -->
+    <h1>AntiPhilosophy<br />Mystycal State</h1>
+    <div class="subhead">
+      <span>✦</span> La ciencia de los seres que son capaces de afrontar cualquier reto, vivir vidas óptimas y descansar en paz en sus tumbas <span>🕊️</span>
     </div>
 
-    <!-- Pregunta clave (destacada) -->
-    <div class="pregunta-clave">
-      <p>⚡ <span>¿qué es el hallucination state, y cómo llegas al último tipo de carro?</span> ⚡</p>
+    <!-- Descripción principal -->
+    <div class="desc">
+      “La ciencia de los seres que son capaces de afrontar cualquier reto, vivir vidas óptimas y descansar en paz en sus tumbas”<br />
+      <small>— Un estado del ser, no una doctrina.</small>
     </div>
 
-    <!-- Mapa conceptual en cuadrícula -->
-    <div class="grid-conceptos">
-      <div class="concepto">
-        <span class="emoji-big">🌀</span>
-        <div class="label">ser humano</div>
-        <div class="valor">consciencia pura</div>
-        <div style="font-size:0.7rem;color:#5f8a7e;">materia · mente · gravedad</div>
-      </div>
-      <div class="concepto">
-        <span class="emoji-big">🚗</span>
-        <div class="label">metáfora del auto</div>
-        <div class="valor">lento → potente → <span style="color:#7affd0;">hipersónico</span></div>
-        <div style="font-size:0.7rem;color:#5f8a7e;">sin límite (excepto la ley)</div>
-      </div>
-      <div class="concepto">
-        <span class="emoji-big">💀</span>
-        <div class="label">la puerta</div>
-        <div class="valor">morir en vida</div>
-        <div style="font-size:0.7rem;color:#5f8a7e;">dejarse arrastrar · nublarse</div>
-      </div>
-      <div class="concepto">
-        <span class="emoji-big">♾️</span>
-        <div class="label">estado alcanzado</div>
-        <div class="valor">Dios del todo y la nada</div>
-        <div style="font-size:0.7rem;color:#5f8a7e;">principio · fin · flujo</div>
+    <!-- Triada dopaminérgica -->
+    <div class="triada">
+      <h2>⚡ La triada dopaminérgica</h2>
+      <p>
+        La triada dopaminérgica es cuando el ser se siente en <strong>total control</strong> de sí mismo y de lo que conforma su mente y su percepción del mundo, en <strong>contraposición</strong> a su mente limitante e insegura.
+      </p>
+      <p style="margin-top:0.8rem;">
+        El único remedio para esto, es ir <strong>contra la seguridad de la mente</strong>, aquella que limita, y que nos hace enredarnos en control, lo que limita nuestro <strong>potencial infinito</strong> de ser quienes queramos ser, decisión tras decisión, como mecanismo de vida perfecto y además de estar presentes.
+      </p>
+    </div>
+
+    <!-- Llamado directo -->
+    <div class="callout">
+      <p>Vayan en contra de la seguridad de vuestras mentes.</p>
+      <div class="sub">
+        Sin importar qué, ni cómo, ni en qué se base.<br />
+        Eso es todo lo que puedo decir.
       </div>
     </div>
 
-    <!-- Frase final / cierre -->
-    <div class="frase-final">
-      “simplemente acelerar, esa es la hallucination”
-      <small>vive y muere así · bye</small>
+    <!-- Tesis total -->
+    <div class="tesis">
+      <p>
+        <strong>Así que esta es la tesis total de la antifilosofía.</strong> Se pudo haber hecho mejor, pero me reservo que sea <strong>imperfecto</strong>, solo para <strong>sabios entendedores</strong>.
+      </p>
+      <p>
+        Es algo que se vive, no algo que se comprende. Entiendan lo que entiendan sobre esto, es lo que hay. Si les sirve, bien. Si no, tampoco.
+      </p>
+      <p class="imperfect">
+        “Esto les permitirá vivir vidas más óptimas y morir bien.”
+      </p>
     </div>
 
-    <!-- Firma -->
-    <div class="byline blink-slow">⟡ HALLUCINATION STATE · antifilosofía en movimiento ⟡</div>
+    <!-- Cierre -->
+    <div class="footer">
+      <span class="emoji">✦</span>
+      <span>AntiPhilosophy Mystycal State · 2026</span>
+      <span class="yeah">¡Yeah!</span>
+    </div>
 
   </div>
 </body>
