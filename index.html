@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bruce Lee Return · Legacy Magistral</title>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet" />
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>the nature of experience · a philosophy of uprooting</title>
+    <!-- Font & minimal styling, all in one -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -17,162 +16,259 @@
         }
 
         body {
-            background-color: #0b0b0b;
-            color: #d4d4d4;
-            font-family: "Inter", sans-serif;
-            font-weight: 300;
-            line-height: 1.85;
+            background-color: #f7f5f0;
+            background-image: radial-gradient(circle at 10% 20%, rgba(235, 230, 220, 0.3) 0%, transparent 40%);
             min-height: 100vh;
             display: flex;
-            justify-content: center;
             align-items: center;
-            padding: 2.5rem 1.5rem;
+            justify-content: center;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            padding: 2rem 1.5rem;
+            color: #1e1b18;
+            line-height: 1.6;
         }
 
-        .container {
-            max-width: 780px;
-            margin: 0 auto;
+        .site-container {
+            max-width: 820px;
             width: 100%;
+            background: rgba(255, 252, 245, 0.75);
+            backdrop-filter: blur(2px);
+            border-radius: 2.5rem;
+            padding: 3.5rem 3rem;
+            box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.08), 0 8px 24px -6px rgba(0, 0, 0, 0.02);
+            border: 1px solid rgba(230, 220, 210, 0.3);
+            transition: all 0.2s ease;
         }
 
-        .title {
-            font-size: 3.2rem;
-            font-weight: 350;
-            letter-spacing: -0.03em;
-            color: #f0f0f0;
-            line-height: 1.1;
-            margin-bottom: 0.2rem;
+        @media (max-width: 600px) {
+            .site-container {
+                padding: 2rem 1.5rem;
+                border-radius: 1.8rem;
+            }
         }
 
-        .subtitle {
-            font-size: 1rem;
-            font-weight: 300;
-            color: #7a7a7a;
-            border-left: 3px solid #2a2a2a;
-            padding-left: 1.2rem;
-            margin-bottom: 2.8rem;
-            font-style: italic;
+        /* ——— essence mark ——— */
+        .essence-badge {
+            display: inline-block;
+            font-size: 0.65rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            background: #1e1b18;
+            color: #f7f5f0;
+            padding: 0.3rem 1rem;
+            border-radius: 40px;
+            margin-bottom: 2.2rem;
+            font-weight: 500;
+            border: 1px solid #2d2a27;
         }
 
-        .body p {
-            margin-bottom: 1.7rem;
-            font-size: 1.08rem;
-            letter-spacing: 0.01em;
-            color: #d0d0d0;
-        }
-
-        .body strong {
-            color: #eeeeee;
-            font-weight: 450;
-        }
-
-        .body em {
-            color: #b8b8b8;
-            font-style: italic;
-        }
-
-        .quote-block {
-            margin: 2rem 0 2.2rem 0;
-            padding-left: 1.5rem;
-            border-left: 3px solid #3a3a3a;
-            font-style: italic;
-            color: #b8b8b8;
-            font-size: 1.1rem;
-        }
-
-        .closing-block {
-            margin-top: 2.8rem;
-            padding-top: 2rem;
-            border-top: 1px solid #2a2a2a;
-            font-size: 1.15rem;
-            font-weight: 350;
-            color: #c0c0c0;
-            line-height: 1.9;
-        }
-
-        .closing-block strong {
-            color: #f0f0f0;
-            font-weight: 450;
-        }
-
-        .ending-line {
-            margin-top: 2.5rem;
+        /* ——— main text ——— */
+        .manifesto {
             font-size: 1.2rem;
-            font-weight: 400;
-            color: #e0e0e0;
-            letter-spacing: 0.02em;
+            font-weight: 350;
+            color: #1e1b18;
         }
 
-        .ending-line em {
-            font-style: italic;
-            color: #aaa;
-            font-weight: 300;
+        .manifesto p {
+            margin-bottom: 1.7rem;
         }
 
-        .ending-line strong {
-            color: #f0f0f0;
+        .manifesto strong {
+            font-weight: 500;
+            color: #0f0d0b;
+        }
+
+        .manifesto .highlight {
+            background: linear-gradient(120deg, rgba(200, 190, 175, 0.2) 0%, rgba(200, 190, 175, 0.2) 40%, transparent 80%);
+            padding: 0 0.2rem;
             font-weight: 450;
         }
 
-        .footer {
-            margin-top: 4rem;
-            font-size: 0.75rem;
-            color: #333;
-            text-align: center;
-            letter-spacing: 0.06em;
-            font-weight: 300;
+        .manifesto .quote-line {
+            display: block;
+            padding-left: 1.8rem;
+            border-left: 3px solid #b8ad9a;
+            font-style: italic;
+            color: #3d3732;
+            margin: 1.8rem 0 2rem 0;
+            font-weight: 350;
+            letter-spacing: -0.01em;
         }
 
-        @media (max-width: 640px) {
-            .title {
-                font-size: 2.2rem;
-            }
-            .body p {
+        .manifesto .quote-line span {
+            font-style: normal;
+            font-weight: 400;
+            color: #1e1b18;
+        }
+
+        /* ——— signature / footnote ——— */
+        .signature-block {
+            margin-top: 3rem;
+            padding-top: 1.8rem;
+            border-top: 1px solid rgba(180, 170, 155, 0.25);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 1.2rem;
+        }
+
+        .signature-block .tagline {
+            font-size: 0.9rem;
+            font-weight: 350;
+            color: #4d453e;
+            letter-spacing: 0.01em;
+        }
+
+        .signature-block .tagline em {
+            font-style: normal;
+            background: #e7e0d6;
+            padding: 0.1rem 0.6rem;
+            border-radius: 20px;
+            font-weight: 400;
+            color: #1e1b18;
+        }
+
+        .signature-block .meta {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #82786d;
+            font-weight: 400;
+        }
+
+        /* ——— subtle pulse (alive) ——— */
+        .pulse-dot {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background: #b8ad9a;
+            border-radius: 50%;
+            margin-right: 10px;
+            opacity: 0.5;
+            animation: breathe 4s ease-in-out infinite;
+        }
+
+        @keyframes breathe {
+            0% { opacity: 0.3; transform: scale(0.95); }
+            50% { opacity: 0.7; transform: scale(1.1); }
+            100% { opacity: 0.3; transform: scale(0.95); }
+        }
+
+        /* ——— fine print / silence ——— */
+        .silence-note {
+            margin-top: 2.5rem;
+            font-size: 0.8rem;
+            color: #9b9084;
+            text-align: center;
+            letter-spacing: 0.02em;
+            font-weight: 300;
+            border-top: 1px solid rgba(180, 170, 155, 0.12);
+            padding-top: 2rem;
+        }
+
+        .silence-note a {
+            color: #5f5548;
+            text-decoration: none;
+            border-bottom: 1px dotted #cbc1b4;
+        }
+
+        .silence-note a:hover {
+            color: #1e1b18;
+            border-bottom: 1px solid #1e1b18;
+        }
+
+        /* responsive readability */
+        @media (max-width: 480px) {
+            .manifesto {
                 font-size: 1rem;
             }
-            .closing-block {
-                font-size: 1rem;
+            .manifesto .quote-line {
+                padding-left: 1rem;
+                margin: 1.2rem 0 1.6rem 0;
             }
-            .ending-line {
-                font-size: 1rem;
+            .signature-block {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
             }
+        }
+
+        /* selection */
+        ::selection {
+            background: #d6cdbe;
+            color: #1e1b18;
+        }
+
+        /* scroll */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #ece6dd;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #b8ad9a;
+            border-radius: 20px;
         }
     </style>
 </head>
 <body>
+    <div class="site-container">
+        <!-- small essence marker -->
+        <div class="essence-badge">⏤ uprooting · pure experience</div>
 
-<div class="container">
+        <!-- main manifesto -->
+        <div class="manifesto">
+            <p>
+                <span class="pulse-dot"></span>
+                Science tells us that human beings are organisms composed of cells. 
+                The mind, however, is a subjective overlay—an addition that often 
+                contradicts what is considered <strong>real</strong> and 
+                <strong>optimal</strong>. It surpasses mental constructs and even 
+                the world itself, pointing instead to a deeper nature: that of 
+                living beings who simply experience life and everything it contains, 
+                without further justification.
+            </p>
 
-    <h1 class="title">Bruce Lee Return</h1>
-    <div class="subtitle">legacy magistral · philosophy of life</div>
+            <p>
+                There are many methods to approach this, but in my case, it is more 
+                of an attitude of <strong>uprooting</strong>. It is the stance I once 
+                summarized as, <span class="highlight">“I do this because I feel like it,”</span> 
+                or, more pragmatically, a state of absolute unconcern and total 
+                arrogance. This allows you to function in certain ways—though this 
+                is not the most perfect explanation, nor do I claim it to be optimal. 
+                I merely present it as one possible approach.
+            </p>
 
-    <div class="body">
+            <div class="quote-line">
+                <span>“</span> In any case, I created this space with the essence of that philosophy, 
+                so that others might enhance their experience of life in its rawest, 
+                purest form. <span>”</span>
+            </div>
 
-        <p>The essence of this philosophy is the thesis that human beings move against a merely primary nature of existence itself. That life is a constant flow, which, far from habitual forms and imposed limits, is what it is.</p>
-
-        <p>If this does not seem enough to you, let yourself be carried, and you will ascend to the true nature of reality — a more profoundly beautiful and authentic one.</p>
-
-        <p>Now allow yourself to be thus, and you will discover life as God brought you into the world.</p>
-
-        <div class="quote-block">
-            Rest in this reality, until the end. <span style="color: #aaa; font-weight: 300;">A smile :)</span>
+            <p>
+                That, in short, is the core of a life that holds structures of meaning 
+                and continues to function until the very end.
+            </p>
         </div>
 
+        <!-- signature & meta -->
+        <div class="signature-block">
+            <div class="tagline">
+                <em>experimenter · pragmatist · unconcerned</em>
+            </div>
+            <div class="meta">
+                ⏤ a philosophy of plain living
+            </div>
+        </div>
+
+        <!-- silence / footer -->
+        <div class="silence-note">
+            <span style="display: inline-block; margin-bottom: 0.4rem;">⏤</span><br>
+            site · essence of uprooting<br>
+            <span style="font-size: 0.7rem; opacity: 0.7;">everything flows, nothing clings</span>
+        </div>
     </div>
-
-    <div class="closing-block">
-        <strong>This is not a system.</strong> It is an opening.<br />
-        The goal is not to quiet the mind, but to keep it open to what comes.
-    </div>
-
-    <div class="ending-line">
-        <em>flow · adapt · be</em><br />
-        <strong>Bruce Lee Return</strong>
-    </div>
-
-    <div class="footer">✦ legacy magistral · philosophy of life ✦</div>
-
-</div>
-
 </body>
 </html>
