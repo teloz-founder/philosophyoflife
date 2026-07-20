@@ -1,326 +1,201 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hyatt · Radical Life Philosophy</title>
-  <style>
-    /* Minimalist, bold, unapologetic — inspired by Christopher S. Hyatt */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Radical Life Philosophy</title>
+    <style>
+        /* Reset and base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    body {
-      background: #0b0a0c;
-      color: #e2dcd5;
-      font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
-      line-height: 1.6;
-      padding: 2rem 1.5rem;
-    }
+        body {
+            background-color: #0b0b0b;
+            display: flex;
+            justify-content: center;
+            padding: 2rem 1rem;
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.7;
+            color: #d6d6d6;
+            min-height: 100vh;
+        }
 
-    .container {
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 1.5rem 0;
-    }
+        .container {
+            max-width: 820px;
+            width: 100%;
+            background-color: #121212;
+            padding: 3.5rem 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
+            border: 1px solid #2a2a2a;
+        }
 
-    /* Typography — sharp, clean, commanding */
-    h1, h2, h3 {
-      font-weight: 500;
-      letter-spacing: -0.02em;
-      color: #f0ebe3;
-    }
+        /* Typography */
+        h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            color: #f0f0f0;
+            margin-bottom: 0.3rem;
+            line-height: 1.1;
+            text-transform: uppercase;
+            font-family: 'Arial', 'Helvetica', sans-serif;
+        }
 
-    h1 {
-      font-size: 3.8rem;
-      font-weight: 600;
-      line-height: 1.1;
-      text-transform: uppercase;
-      border-bottom: 2px solid #a78c6b;
-      padding-bottom: 0.6rem;
-      margin-bottom: 1.8rem;
-      letter-spacing: 0.04em;
-      color: #f5efe7;
-      text-shadow: 0 2px 6px rgba(0,0,0,0.7);
-    }
+        .subhead {
+            font-size: 1rem;
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 2rem;
+            font-family: 'Arial', 'Helvetica', sans-serif;
+            border-bottom: 1px solid #2a2a2a;
+            padding-bottom: 1.5rem;
+        }
 
-    .subhead {
-      font-size: 1.3rem;
-      font-weight: 300;
-      color: #b7aa9a;
-      margin-top: -0.8rem;
-      margin-bottom: 2.5rem;
-      border-left: 4px solid #a78c6b;
-      padding-left: 1.5rem;
-      font-style: italic;
-    }
+        .manifesto {
+            font-size: 1.15rem;
+        }
 
-    h2 {
-      font-size: 2.2rem;
-      margin-top: 3rem;
-      margin-bottom: 1.2rem;
-      border-bottom: 1px solid #3e3530;
-      padding-bottom: 0.4rem;
-      color: #e7dfd5;
-    }
+        .manifesto p {
+            margin-bottom: 1.5rem;
+            text-align: justify;
+        }
 
-    h3 {
-      font-size: 1.5rem;
-      margin: 2rem 0 0.8rem 0;
-      color: #d4c9bc;
-      font-weight: 400;
-      letter-spacing: -0.01em;
-    }
+        .manifesto .highlight {
+            color: #e0c080;
+            font-weight: 600;
+        }
 
-    p {
-      margin-bottom: 1.4rem;
-      font-weight: 300;
-      color: #cfc6bb;
-    }
+        .manifesto .block-quote {
+            font-style: italic;
+            color: #b0b0b0;
+            padding-left: 1.5rem;
+            border-left: 3px solid #e0c080;
+            margin: 2rem 0;
+        }
 
-    strong {
-      color: #ecdac0;
-      font-weight: 500;
-    }
+        .manifesto .divider {
+            text-align: center;
+            color: #444;
+            font-size: 1.8rem;
+            letter-spacing: 8px;
+            margin: 1.8rem 0;
+            font-weight: 100;
+        }
 
-    .insight-block {
-      background: #161215;
-      padding: 1.8rem 2rem;
-      margin: 2.2rem 0;
-      border-left: 6px solid #b48b6b;
-      border-radius: 0 8px 8px 0;
-      box-shadow: inset 0 0 20px rgba(0,0,0,0.5);
-    }
+        .manifesto .emph-line {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #e8e8e8;
+            text-align: center;
+            margin: 2rem 0 1.2rem 0;
+            letter-spacing: 0.5px;
+        }
 
-    .insight-block p {
-      font-size: 1.2rem;
-      font-weight: 300;
-      color: #e6dbd0;
-      margin-bottom: 0.2rem;
-    }
+        .manifesto .closing {
+            margin-top: 2.5rem;
+            text-align: center;
+            font-size: 1.1rem;
+            color: #aaa;
+        }
 
-    .insight-block strong {
-      color: #f0dcc4;
-    }
+        .manifesto .closing strong {
+            color: #e0c080;
+            font-weight: 600;
+        }
 
-    .principle-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 2rem;
-      margin: 2.5rem 0 1.5rem;
-    }
+        /* Footer signature */
+        .footer-sign {
+            margin-top: 3.5rem;
+            padding-top: 2rem;
+            border-top: 1px solid #2a2a2a;
+            text-align: center;
+            font-size: 0.95rem;
+            color: #666;
+            letter-spacing: 1px;
+            font-family: 'Arial', 'Helvetica', sans-serif;
+            text-transform: uppercase;
+        }
 
-    .principle-card {
-      background: #141114;
-      padding: 1.8rem 1.6rem;
-      border-radius: 12px;
-      border: 1px solid #362e29;
-      transition: all 0.15s ease;
-      box-shadow: 0 8px 18px rgba(0,0,0,0.6);
-    }
+        .footer-sign span {
+            color: #e0c080;
+        }
 
-    .principle-card:hover {
-      border-color: #a08466;
-      background: #1b171a;
-      transform: translateY(-3px);
-    }
-
-    .principle-card h3 {
-      margin-top: 0;
-      margin-bottom: 0.5rem;
-      color: #f0e3d4;
-      font-weight: 500;
-      font-size: 1.6rem;
-      border-bottom: 1px solid #3e322b;
-      padding-bottom: 0.4rem;
-    }
-
-    .principle-card p {
-      font-size: 0.98rem;
-      color: #c9bdb0;
-      margin-bottom: 0.2rem;
-    }
-
-    .quote-block {
-      font-size: 1.4rem;
-      line-height: 1.5;
-      font-weight: 300;
-      color: #d6c9ba;
-      background: #0f0d0e;
-      padding: 2rem 2.2rem;
-      border-radius: 40px 8px 40px 8px;
-      margin: 2.8rem 0;
-      border: 1px solid #4a3c33;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.4);
-    }
-
-    .quote-block small {
-      display: block;
-      margin-top: 0.8rem;
-      font-size: 1rem;
-      color: #a58d79;
-      text-align: right;
-      font-style: italic;
-    }
-
-    .footer-note {
-      margin-top: 4rem;
-      border-top: 1px solid #312a25;
-      padding-top: 2rem;
-      font-size: 0.9rem;
-      color: #8e7f70;
-      text-align: center;
-      letter-spacing: 0.04em;
-    }
-
-    .footer-note span {
-      color: #b8a58c;
-    }
-
-    a {
-      color: #c7b09b;
-      text-decoration: none;
-      border-bottom: 1px dotted #5f4d3e;
-    }
-
-    a:hover {
-      color: #f0dfcb;
-      border-bottom: 1px solid #c6ad91;
-    }
-
-    @media (max-width: 600px) {
-      h1 { font-size: 2.8rem; }
-      .subhead { font-size: 1.1rem; padding-left: 1rem; }
-      .principle-grid { grid-template-columns: 1fr; }
-      .quote-block { font-size: 1.1rem; padding: 1.5rem; }
-    }
-
-    /* ritualistic accent */
-    .sigil {
-      font-family: 'Times New Roman', serif;
-      font-size: 1.6rem;
-      color: #5d4d3b;
-      letter-spacing: 0.3rem;
-      opacity: 0.3;
-      margin: 1rem 0 0.2rem;
-    }
-
-    hr {
-      border: 0;
-      height: 1px;
-      background: linear-gradient(90deg, #2f2620, #6b5847, #2f2620);
-      margin: 2.2rem 0;
-    }
-  </style>
+        /* Responsive */
+        @media (max-width: 600px) {
+            .container {
+                padding: 2rem 1.2rem;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+            .manifesto {
+                font-size: 1rem;
+            }
+            .manifesto .emph-line {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
 </head>
 <body>
-<div class="container">
+    <div class="container">
+        <h1>The Radical Life Philosophy</h1>
+        <div class="subhead">A Manifesto on Human Nature, Autonomy, and the Art of Becoming</div>
 
-  <!-- HEADER: radical declaration -->
-  <h1>⚡ radical existence</h1>
-  <div class="subhead">
-    A philosophy forged in the fire of Christopher S. Hyatt —<br>
-    <span style="font-weight: 300;">total responsibility, unflinching will, and the art of becoming.</span>
-  </div>
+        <div class="manifesto">
 
-  <!-- intro: the hyattian core -->
-  <div style="margin-bottom: 2rem;">
-    <p style="font-size: 1.15rem;"><strong>You are the ultimate authority.</strong> 
-    There is no savior, no external redeemer. Christopher S. Hyatt's teachings strip away illusion: 
-    the only genuine power is the power you claim over your own mind, body, and destiny. 
-    This is not a comfortable path — it is the path of the <strong>radical individual</strong>.</p>
-  </div>
+            <p>Human nature is complex.</p>
 
-  <!-- INSIGHT BLOCK : core principle -->
-  <div class="insight-block">
-    <p>“<strong>The world does not owe you a living.</strong> You owe yourself a life. 
-    Every moment is a choice between fear and courage, between autopilot and authentic will.”</p>
-    <p style="font-size: 0.95rem; margin-top: 0.5rem; color: #b7a694;">— adapted from the spirit of Hyatt</p>
-  </div>
+            <p>We evolved between doubt and doubt. Mental inquisitions made it difficult to fall toward where we wished our destiny lay. And yet, what is man? A kind of idiot who debases himself with the most elementary questions of knowledge. And yet, what can we extract from this knowledge that might spark a better life in all of us?</p>
 
-  <!-- PHILOSOPHY PILLARS : 4 principles -->
-  <h2>⚔️ four pillars of radical philosophy</h2>
-  <div class="principle-grid">
-    <div class="principle-card">
-      <h3>1. absolute responsibility</h3>
-      <p>No blame. No victimhood. You are the author of your reactions, your choices, your life. 
-      To be responsible is to be <strong>response-able</strong> — capable of responding to any situation with clarity.</p>
+            <p class="block-quote">Human beings can become anything.</p>
+
+            <p>Then, autonomy presented itself as a method of expression.</p>
+
+            <p>Do not contemplate this with the intellect. You must feel it. A connection that covers your entire life and sends you to the end on a correct path, because it is the only one that could serve your purposes.</p>
+
+            <p>Christopher Hyatt's phrases against conditioning are based on a simple truth: we live deceived by everything and everyone. We never fall into our true nature, free from the inquisition of the mind, awakening to who we really are, without need for approval or anything that external people offer us.</p>
+
+            <div class="divider">· · ·</div>
+
+            <p>Beyond boredom. Beyond suffering. Beyond this and that.</p>
+
+            <p class="emph-line">Let us call this philosophy: The Radical Life Philosophy.</p>
+
+            <p>A radical life is, consequently, a life that is serious and straight. In our antidemocratic and absolutely crude labors, we live as we please, liberated from guilt and fear. In that pragmatic style, we are the species of freedom. A species of excellent life until the end.</p>
+
+            <p>Committed to the life we want. Committed to the mind we want. Committed to what we want to become.</p>
+
+            <p>Without limits.</p>
+
+            <p>Until we adopt all the styles of what we desire, and can die one day well.</p>
+
+            <p>But to see what the essence truly is: <span class="highlight">it is to be without forms and without limits.</span></p>
+
+            <p>Only then do you reveal yourself to the true nature of existence itself.</p>
+
+            <div class="divider">· · ·</div>
+
+            <p>I hope this serves you in some way.</p>
+
+            <p>It is a little chaotic, and I accept that. But I hope you do not understand it with your mind. I hope you <em>feel</em> it.</p>
+
+            <p>If this moved you in some way, if some spark of non-intellectual comprehension ignited within you, then feel it. This is a finger pointing at the moon. It is not the end of the path.</p>
+
+            <p>This can improve your life in all aspects.</p>
+
+            <p class="closing">I hope it serves you.<br><br><strong>Farewell.</strong></p>
+
+        </div>
+
+        <div class="footer-sign">
+            <span>✦</span> Be without forms. Be without limits. Become. <span>✦</span>
+        </div>
     </div>
-    <div class="principle-card">
-      <h3>2. will as discipline</h3>
-      <p>Will is not wishful thinking; it is applied force. Train your mind like a muscle. 
-      Say “no” to distraction, “yes” to the difficult. The disciplined will cuts through illusion.</p>
-    </div>
-    <div class="principle-card">
-      <h3>3. embrace the shadow</h3>
-      <p>Deny nothing. Your darkness, your fears, your raw impulses — they are fuel. 
-      Integrate them consciously. The integrated self is terrifyingly free.</p>
-    </div>
-    <div class="principle-card">
-      <h3>4. create your own meaning</h3>
-      <p>No external system gives your life value. You <strong>impose</strong> meaning through action. 
-      Define your own values, and live them without apology.</p>
-    </div>
-  </div>
-
-  <!-- DEEPER TEACHINGS : Hyatt's essence -->
-  <h2>🌀 the hyattian imperative</h2>
-  <p><strong>Undo yourself.</strong> Strip away the conditioning, the inherited beliefs, the comfortable lies. 
-  Hyatt’s method is radical deconstruction: only when you see the puppet strings can you cut them. 
-  Then, rebuild from the ground up — consciously, deliberately.</p>
-  
-  <div style="display: flex; flex-wrap: wrap; gap: 1.2rem; margin: 1.8rem 0; background: #121011; padding: 1.8rem; border-radius: 20px; border: 1px solid #302824;">
-    <div style="flex: 1; min-width: 200px;">
-      <h3 style="margin: 0 0 0.3rem 0; font-size: 1.2rem;">⚡ self-overcoming</h3>
-      <p style="font-size: 0.95rem;">The only opponent is your former self. Grow or stagnate — there is no middle ground.</p>
-    </div>
-    <div style="flex: 1; min-width: 200px;">
-      <h3 style="margin: 0 0 0.3rem 0; font-size: 1.2rem;">🔥 no safety nets</h3>
-      <p style="font-size: 0.95rem;">Comfort is the enemy of evolution. Embrace risk, uncertainty, and the thrill of the unknown.</p>
-    </div>
-    <div style="flex: 1; min-width: 200px;">
-      <h3 style="margin: 0 0 0.3rem 0; font-size: 1.2rem;">🜁 sovereign mind</h3>
-      <p style="font-size: 0.95rem;">Your mind is your kingdom. Guard it, train it, and never surrender it to external authority.</p>
-    </div>
-  </div>
-
-  <!-- QUOTE : provocative and direct -->
-  <div class="quote-block">
-    “The only true freedom is the freedom to <strong>choose your response</strong> — 
-    and the courage to accept the consequences. Everything else is theater.”
-    <small>— Christopher S. Hyatt (paraphrased)</small>
-  </div>
-
-  <!-- PRACTICAL WISDOM : daily application -->
-  <h2>⚡ living the philosophy</h2>
-  <p><strong>Morning ritual:</strong> Before you check your phone, sit with yourself. Ask: <em>“What do I truly want today?”</em> 
-  Not what you should want — what you <strong>will</strong> want. Then act on it.</p>
-  <p><strong>Evening audit:</strong> Review your day without self-deception. Where did you act from fear? Where did you act from will? 
-  Celebrate the latter, learn from the former. No excuses.</p>
-  <p><strong>On relationships:</strong> Engage with others as sovereign beings. Do not seek completion in another; seek 
-  <strong>mutual expansion</strong>. The radical individual respects the radical individuality of others.</p>
-
-  <hr>
-
-  <!-- FINAL MANIFESTO : condensed -->
-  <div style="background: #0e0c0d; padding: 1.8rem 2rem; border-radius: 30px 8px 30px 8px; border-left: 4px solid #a78c6b;">
-    <p style="font-size: 1.4rem; font-weight: 300; line-height: 1.5; color: #e5d7c7;">
-      <strong>Manifesto:</strong> I am the cause, not the effect. I create my world through choice. 
-      I embrace the darkness as much as the light. I am the artist of my own becoming.
-    </p>
-    <div style="text-align: right; margin-top: 0.5rem; color: #a28b76;">— the radical path</div>
-  </div>
-
-  <!-- subtle sigil / closing -->
-  <div class="sigil">⛤ ⚡ ⛤</div>
-
-  <div class="footer-note">
-    <span>✦</span> based on the teachings of Christopher S. Hyatt · radical responsibility · unapologetic will <span>✦</span><br>
-    <span style="font-size: 0.8rem; opacity: 0.6;">“You are the experiment, the scientist, and the result.”</span>
-  </div>
-
-</div>
 </body>
 </html>
