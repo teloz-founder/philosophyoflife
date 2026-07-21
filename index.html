@@ -1,201 +1,184 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Radical Life Philosophy</title>
-    <style>
-        /* Reset and base */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Radical Logical Perceptualism · Daniel Gascón</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        body {
-            background-color: #0b0b0b;
-            display: flex;
-            justify-content: center;
-            padding: 2rem 1rem;
-            font-family: 'Georgia', 'Times New Roman', serif;
-            line-height: 1.7;
-            color: #d6d6d6;
-            min-height: 100vh;
-        }
+    body {
+      background: #f7f5f0;
+      font-family: 'Georgia', 'Times New Roman', Times, serif;
+      color: #1e1e1e;
+      line-height: 1.7;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 2rem 1.5rem;
+    }
 
-        .container {
-            max-width: 820px;
-            width: 100%;
-            background-color: #121212;
-            padding: 3.5rem 2.5rem;
-            border-radius: 12px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
-            border: 1px solid #2a2a2a;
-        }
+    .container {
+      max-width: 720px;
+      width: 100%;
+      background: #ffffff;
+      border-radius: 2.5rem;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.05), 0 8px 20px rgba(0,0,0,0.03);
+      padding: 3rem 2.5rem;
+      transition: all 0.2s ease;
+    }
 
-        /* Typography */
-        h1 {
-            font-size: 2.8rem;
-            font-weight: 700;
-            letter-spacing: 0.5px;
-            color: #f0f0f0;
-            margin-bottom: 0.3rem;
-            line-height: 1.1;
-            text-transform: uppercase;
-            font-family: 'Arial', 'Helvetica', sans-serif;
-        }
+    @media (max-width: 500px) {
+      .container {
+        padding: 2rem 1.5rem;
+        border-radius: 2rem;
+      }
+    }
 
-        .subhead {
-            font-size: 1rem;
-            color: #888;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            margin-bottom: 2rem;
-            font-family: 'Arial', 'Helvetica', sans-serif;
-            border-bottom: 1px solid #2a2a2a;
-            padding-bottom: 1.5rem;
-        }
+    h1 {
+      font-size: 2.6rem;
+      font-weight: 400;
+      letter-spacing: -0.5px;
+      line-height: 1.2;
+      margin-bottom: 0.35rem;
+      color: #2e2a24;
+      border-left: 5px solid #b5835a;
+      padding-left: 1.5rem;
+    }
 
-        .manifesto {
-            font-size: 1.15rem;
-        }
+    .subtitle {
+      font-size: 1.3rem;
+      font-weight: 400;
+      font-style: italic;
+      color: #6b5e4f;
+      margin-bottom: 2.5rem;
+      padding-left: 1.5rem;
+      border-left: 5px solid transparent;
+    }
 
-        .manifesto p {
-            margin-bottom: 1.5rem;
-            text-align: justify;
-        }
+    .philosophy-text {
+      font-size: 1.1rem;
+      color: #2c2c2c;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
 
-        .manifesto .highlight {
-            color: #e0c080;
-            font-weight: 600;
-        }
+    .philosophy-text p {
+      text-align: justify;
+      hyphens: auto;
+      letter-spacing: 0.01em;
+    }
 
-        .manifesto .block-quote {
-            font-style: italic;
-            color: #b0b0b0;
-            padding-left: 1.5rem;
-            border-left: 3px solid #e0c080;
-            margin: 2rem 0;
-        }
+    .highlight {
+      font-weight: 600;
+      color: #4d3e2e;
+      background: #f3ede5;
+      padding: 0 0.2rem;
+      border-radius: 4px;
+      white-space: nowrap;
+    }
 
-        .manifesto .divider {
-            text-align: center;
-            color: #444;
-            font-size: 1.8rem;
-            letter-spacing: 8px;
-            margin: 1.8rem 0;
-            font-weight: 100;
-        }
+    .signature {
+      margin-top: 2.8rem;
+      border-top: 1px solid #e3d9cc;
+      padding-top: 1.8rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+    }
 
-        .manifesto .emph-line {
-            font-size: 1.3rem;
-            font-weight: 600;
-            color: #e8e8e8;
-            text-align: center;
-            margin: 2rem 0 1.2rem 0;
-            letter-spacing: 0.5px;
-        }
+    .author {
+      font-size: 1.25rem;
+      font-weight: 500;
+      color: #3b3327;
+      letter-spacing: 0.2px;
+    }
 
-        .manifesto .closing {
-            margin-top: 2.5rem;
-            text-align: center;
-            font-size: 1.1rem;
-            color: #aaa;
-        }
+    .age {
+      font-size: 1rem;
+      color: #7b6e5e;
+      font-style: italic;
+    }
 
-        .manifesto .closing strong {
-            color: #e0c080;
-            font-weight: 600;
-        }
+    .badge {
+      background: #e7ddd0;
+      color: #3e362b;
+      padding: 0.25rem 1rem;
+      border-radius: 30px;
+      font-size: 0.9rem;
+      letter-spacing: 0.4px;
+      text-transform: uppercase;
+      font-weight: 500;
+    }
 
-        /* Footer signature */
-        .footer-sign {
-            margin-top: 3.5rem;
-            padding-top: 2rem;
-            border-top: 1px solid #2a2a2a;
-            text-align: center;
-            font-size: 0.95rem;
-            color: #666;
-            letter-spacing: 1px;
-            font-family: 'Arial', 'Helvetica', sans-serif;
-            text-transform: uppercase;
-        }
+    .quiet-note {
+      margin-top: 2rem;
+      font-size: 0.95rem;
+      color: #8b7a66;
+      font-style: italic;
+      text-align: right;
+      border-right: 3px solid #d4c4b0;
+      padding-right: 1.2rem;
+    }
 
-        .footer-sign span {
-            color: #e0c080;
-        }
+    em {
+      font-style: italic;
+      color: #5f4e38;
+    }
 
-        /* Responsive */
-        @media (max-width: 600px) {
-            .container {
-                padding: 2rem 1.2rem;
-            }
-            h1 {
-                font-size: 2rem;
-            }
-            .manifesto {
-                font-size: 1rem;
-            }
-            .manifesto .emph-line {
-                font-size: 1.1rem;
-            }
-        }
-    </style>
+    strong {
+      color: #3a2f23;
+      font-weight: 600;
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <h1>The Radical Life Philosophy</h1>
-        <div class="subhead">A Manifesto on Human Nature, Autonomy, and the Art of Becoming</div>
+  <div class="container">
+    <h1>Radical Logical<br>Perceptualism</h1>
+    <div class="subtitle">mind without limits, resting on two points · total experience of life and the human being until the very end</div>
 
-        <div class="manifesto">
+    <div class="philosophy-text">
+      <p>
+        <strong>Let us begin with two assertions:</strong> the world consists of experimentation, and of the mind, which is the method of perception we possess. Even when you are not using your mind, the unconscious mind is still regulating processes that interact totally and absolutely with your body. The mind is always necessary in the algorithmic, interactive, and extraordinarily creative mode of comprehension that we human beings hold. Through it, we innovate toward what is called consciousness, a product that many living beings lack because they never reached that peak of evolution.
+      </p>
 
-            <p>Human nature is complex.</p>
+      <p>
+        <span class="highlight">The two points on which I believe this rests are simple:</span> life is composed of action and, as I have just stated, of perception.
+      </p>
 
-            <p>We evolved between doubt and doubt. Mental inquisitions made it difficult to fall toward where we wished our destiny lay. And yet, what is man? A kind of idiot who debases himself with the most elementary questions of knowledge. And yet, what can we extract from this knowledge that might spark a better life in all of us?</p>
+      <p>
+        You can choose not to act, yet I do not understand why people complicate themselves with barriers of meaning. Let us summarize life: <strong>to act, not to act, and to perceive.</strong> That is everything. Holding this perspective, I cannot comprehend the neurosis of people, when this summary makes so clear what the purpose of life is, and how it carries us until the end, surfing each situation and perception until one day our body stops.
+      </p>
 
-            <p class="block-quote">Human beings can become anything.</p>
+      <p>
+        The studies of Dr. Christopher S. Hyatt and his exercises on the vindication of the mind explain that the mind is a sort of erroneous association, a confusion machine, which goes, in essence, against its own most natural nature, in a neurotic and possessive manner. To be a radical logical perceptualist is to take life as it is, from beginning to end. If this seems boring to you, it is because it is boring, but I intend to eliminate certain levels of epistemological neurosis. I hope, however, that you know the cause of neurosis is going against the reality that happens to us, and that ceasing that contrary desire or suffering is perhaps the very reason it also ceases <em>(Buddha)</em>.
+      </p>
 
-            <p>Then, autonomy presented itself as a method of expression.</p>
-
-            <p>Do not contemplate this with the intellect. You must feel it. A connection that covers your entire life and sends you to the end on a correct path, because it is the only one that could serve your purposes.</p>
-
-            <p>Christopher Hyatt's phrases against conditioning are based on a simple truth: we live deceived by everything and everyone. We never fall into our true nature, free from the inquisition of the mind, awakening to who we really are, without need for approval or anything that external people offer us.</p>
-
-            <div class="divider">· · ·</div>
-
-            <p>Beyond boredom. Beyond suffering. Beyond this and that.</p>
-
-            <p class="emph-line">Let us call this philosophy: The Radical Life Philosophy.</p>
-
-            <p>A radical life is, consequently, a life that is serious and straight. In our antidemocratic and absolutely crude labors, we live as we please, liberated from guilt and fear. In that pragmatic style, we are the species of freedom. A species of excellent life until the end.</p>
-
-            <p>Committed to the life we want. Committed to the mind we want. Committed to what we want to become.</p>
-
-            <p>Without limits.</p>
-
-            <p>Until we adopt all the styles of what we desire, and can die one day well.</p>
-
-            <p>But to see what the essence truly is: <span class="highlight">it is to be without forms and without limits.</span></p>
-
-            <p>Only then do you reveal yourself to the true nature of existence itself.</p>
-
-            <div class="divider">· · ·</div>
-
-            <p>I hope this serves you in some way.</p>
-
-            <p>It is a little chaotic, and I accept that. But I hope you do not understand it with your mind. I hope you <em>feel</em> it.</p>
-
-            <p>If this moved you in some way, if some spark of non-intellectual comprehension ignited within you, then feel it. This is a finger pointing at the moon. It is not the end of the path.</p>
-
-            <p>This can improve your life in all aspects.</p>
-
-            <p class="closing">I hope it serves you.<br><br><strong>Farewell.</strong></p>
-
-        </div>
-
-        <div class="footer-sign">
-            <span>✦</span> Be without forms. Be without limits. Become. <span>✦</span>
-        </div>
+      <p>
+        I also hope you can distinguish between reality, which is a <strong>perhaps yes</strong> or a <strong>perhaps no</strong>. There is never an opposite. By surfing between the fact that reality is neither good nor bad, but rather any reality that allows us to become masters of opposites, we can rise toward a kind of conjunction where we are pure matter in unison with all universal laws, without distinguishing here or there. Only in this way do we become masters of totality, absolute totality, because by covering the complete range of experience, we become beings capable of excelling beyond absolute experience and living excellent lives. <strong>Make yourself master of every opposite, and you will never find yourself blocked before a limitation.</strong> As I said, it is to be master of the totality of life, formless and limitless, able to be everything or nothing, until the very end.
+      </p>
     </div>
+
+    <div class="signature">
+      <div>
+        <span class="author">Daniel Gascón</span>
+        <span class="age">· 17 years</span>
+      </div>
+      <div class="badge">radical perceptualism</div>
+    </div>
+
+    <div class="quiet-note">
+      I hope this serves you. This philosophy is of my own design.
+    </div>
+  </div>
 </body>
 </html>
